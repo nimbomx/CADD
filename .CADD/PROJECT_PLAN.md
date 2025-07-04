@@ -1,4 +1,4 @@
-# PROJECT PLAN - Nimbo Pro
+# PROJECT PLAN - [Project Name]
 
 > **Instructions for User:** Complete sections according to your project. If you don't know what to put, leave it empty and the agent will help you.
 
@@ -9,33 +9,34 @@
 ## 📋 Basic Information
 
 ### Project Name
-**Nimbo Pro** - Portal de Transformación Digital con AI
+**[Project Name]** - [Brief description]
 
 ### Project Type
-- [x] Web Application
-- [x] API/Backend
+- [ ] Web Application
+- [ ] API/Backend
 - [ ] Mobile App
 - [ ] Desktop App
 - [ ] E-commerce
-- [x] SaaS
+- [ ] SaaS
 - [ ] Landing Page
 - [ ] Other: ___________
 
 ### Main Objective
-Nimbo Pro es un portal web dedicado a la transformación digital con énfasis en AI Transformation. La plataforma ofrece contenido gratuito y servicios premium para dos audiencias principales: programadores que desean aprender las metodologías de Nimbo, y empresas (especialmente PYMES) que necesitan acompañamiento en transformación digital con enfoque AI-first.
+[Describe the main problem your project solves and who it's for. What makes it unique?]
 
 ---
 
 ## 👥 Users and Audience
 
 ### Target Audience
-1. **Programadores**: Desarrolladores que quieren aprender metodologías de transformación digital y AI
-2. **Empresas/PYMES**: Pequeñas y medianas empresas que necesitan acompañamiento en transformación digital
+1. **[Primary User Group]**: [Description of who they are and what they need]
+2. **[Secondary User Group]**: [Description of who they are and what they need]
+3. **[Additional User Group]**: [If applicable]
 
 ### Main Use Cases
-1. **Programadores**: Acceso a metodologías, tutoriales, recursos técnicos y comunidad
-2. **Empresas**: Consultoría, herramientas de evaluación, planes de transformación digital
-3. **Administradores**: Gestión de contenido, usuarios y análisis de métricas
+1. **[Primary Use Case]**: [What users will primarily do with your app]
+2. **[Secondary Use Case]**: [Additional functionality users will need]
+3. **[Admin Use Case]**: [How administrators will manage the system]
 
 ---
 
@@ -44,50 +45,50 @@ Nimbo Pro es un portal web dedicado a la transformación digital con énfasis en
 ### Main Features (MVP)
 > Essential functionalities for initial launch
 
-- [ ] **Sistema de Autenticación Multi-proveedor**: Email/Password, Google, GitHub, LinkedIn, Facebook
-- [ ] **Portal de Contenido Gratuito**: Artículos, casos de estudio, recursos básicos
-- [ ] **Área de Usuario Registrado**: Dashboard personalizado por tipo de usuario
-- [ ] **Sistema de Pagos Híbrido**: Stripe (internacional) + Conekta (México)
-- [ ] **CMS Integrado**: Para administradores, gestión de contenido
-- [ ] **Perfiles de Usuario**: Diferenciación entre Programadores y Empresas
+- [ ] **[Core Feature 1]**: [Description of the most important feature]
+- [ ] **[Core Feature 2]**: [Description of second most important feature]
+- [ ] **[Core Feature 3]**: [Description of third most important feature]
+- [ ] **[Authentication System]**: [How users will log in and manage accounts]
+- [ ] **[Data Management]**: [How data will be created, stored, and accessed]
+- [ ] **[User Interface]**: [Main screens and user interactions]
 
 ### Secondary Features (V2)
 > Important but not critical functionalities for MVP
 
-- [ ] **Cursos/Tutoriales Interactivos**: Contenido educativo estructurado
-- [ ] **Sistema de Consultorías**: Booking y gestión de sesiones
-- [ ] **Herramientas de Evaluación**: Assessment de madurez digital
-- [ ] **Comunidad/Forum**: Interacción entre usuarios
-- [ ] **Certificaciones**: Sistema de badges y certificados
+- [ ] **[Enhancement 1]**: [Description of useful but non-essential feature]
+- [ ] **[Enhancement 2]**: [Description of another nice-to-have feature]
+- [ ] **[Integration 1]**: [External service integration]
+- [ ] **[Advanced UI]**: [More sophisticated user interface elements]
+- [ ] **[Reporting]**: [Analytics and reporting features]
 
 ### Future Features (V3+)
 > Ideas for later versions
 
-- [ ] **Marketplace de Herramientas**: Integración con tools de AI
-- [ ] **Sistema de Partnering**: Red de colaboradores
-- [ ] **Analytics Avanzados**: Métricas detalladas de transformación
+- [ ] **[Future Feature 1]**: [Advanced functionality for future versions]
+- [ ] **[Future Feature 2]**: [Another advanced feature]
+- [ ] **[Scaling Features]**: [Features needed as the app grows]
 
 ---
 
 ## 🛠️ Technologies and Restrictions
 
 ### Preferred Technology Stack
-- **Frontend**: Next.js
-- **Backend**: NestJS
-- **Database**: MongoDB
-- **Deployment**: Dokploy
-- **Package Manager**: pnpm
+- **Frontend**: [React, Vue, Angular, Next.js, etc.]
+- **Backend**: [Node.js, Python, Java, C#, etc.]
+- **Database**: [PostgreSQL, MongoDB, MySQL, etc.]
+- **Deployment**: [Vercel, Netlify, AWS, etc.]
+- **Package Manager**: [npm, yarn, pnpm]
 
 ### Technical Restrictions
-- [x] Must work on mobile
-- [x] Must be accessible (WCAG)
+- [ ] Must work on mobile
+- [ ] Must be accessible (WCAG)
 - [ ] Must support multiple languages
 - [ ] Must work offline
 - [ ] Others: ___________
 
 ### Required Integrations
-- [x] Authentication (Google, GitHub, LinkedIn, Facebook + extensible)
-- [x] Payments (Stripe + Conekta)
+- [ ] Authentication (Google, GitHub, etc.)
+- [ ] Payments (Stripe, PayPal, etc.)
 - [ ] Email (SendGrid, Mailchimp, etc.)
 - [ ] Analytics (Google Analytics, etc.)
 - [ ] Others: ___________
@@ -96,145 +97,138 @@ Nimbo Pro es un portal web dedicado a la transformación digital con énfasis en
 
 ## 📅 Timeline and Phases
 
-### Phase 1: Core Infrastructure (4 semanas)
-**Estimated duration**: 4 weeks
+### Phase 1: [Foundation Phase Name]
+**Estimated duration**: [X weeks/months]
 
-- [ ] Set up Next.js + NestJS project structure
-- [ ] Configure MongoDB database
-- [ ] Implement multi-provider authentication system
-- [ ] Create basic user roles and permissions
-- [ ] Set up development environment
+- [ ] [Core setup task 1]
+- [ ] [Core setup task 2]
+- [ ] [Core setup task 3]
+- [ ] [Core setup task 4]
+- [ ] [Core setup task 5]
 
-### Phase 2: User Management & Content (3 semanas)
-**Estimated duration**: 3 weeks
+### Phase 2: [Core Features Phase Name]
+**Estimated duration**: [X weeks/months]
 
-- [ ] Implement user profiles (Programadores vs Empresas)
-- [ ] Create CMS for admin content management
-- [ ] Develop content display system
-- [ ] Basic dashboard for users
-- [ ] User registration flow
+- [ ] [Main feature implementation 1]
+- [ ] [Main feature implementation 2]
+- [ ] [Main feature implementation 3]
+- [ ] [Main feature implementation 4]
+- [ ] [Main feature implementation 5]
 
-### Phase 3: Payment System (2 semanas)
-**Estimated duration**: 2 weeks
+### Phase 3: [Integration Phase Name]
+**Estimated duration**: [X weeks/months]
 
-- [ ] Integrate Stripe for international payments
-- [ ] Integrate Conekta for Mexico payments
-- [ ] Create subscription/payment plans
-- [ ] Payment webhook handling
-- [ ] Payment history and invoicing
+- [ ] [Integration task 1]
+- [ ] [Integration task 2]
+- [ ] [Integration task 3]
+- [ ] [Integration task 4]
+- [ ] [Integration task 5]
 
-### Phase 4: Advanced Features & Polish (3 semanas)
-**Estimated duration**: 3 weeks
+### Phase 4: [Polish & Launch Phase Name]
+**Estimated duration**: [X weeks/months]
 
-- [ ] Advanced user dashboards
-- [ ] Content categorization and search
-- [ ] Email notification system
-- [ ] Analytics implementation
-- [ ] Performance optimization and testing
+- [ ] [Final feature 1]
+- [ ] [Final feature 2]
+- [ ] [Testing and optimization]
+- [ ] [Documentation and deployment]
+- [ ] [Launch preparation]
 
 ---
 
 ## 🎨 Design and UX
 
 ### Visual Style
-- **Colors**: Corporate, tech-focused palette
-- **Typography**: Modern, professional fonts
-- **Style**: Clean, modern, business-oriented
+- **Colors**: [Color palette description]
+- **Typography**: [Font preferences and hierarchy]
+- **Style**: [Overall design aesthetic]
 
 ### Design References
-- Professional SaaS platforms
-- Educational tech portals
-- Corporate consulting websites
+- [Reference website or app 1]
+- [Reference website or app 2]
+- [Reference website or app 3]
 
 ### Wireframes/Mockups
-- [ ] Landing page
-- [ ] Login/register page
-- [ ] User dashboard (Programadores)
-- [ ] User dashboard (Empresas)
-- [ ] Admin CMS interface
-- [ ] Payment/subscription pages
+- [ ] [Main screen 1]
+- [ ] [Main screen 2]
+- [ ] [Main screen 3]
+- [ ] [Main screen 4]
+- [ ] [Main screen 5]
+- [ ] [Main screen 6]
 
 ---
 
 ## 📊 Metrics and Objectives
 
 ### Main KPIs
-- **User Registration**: 500 users in first 3 months
-- **Conversion Rate**: 15% free to paid conversion
-- **Content Engagement**: 70% monthly active users
+- **[Primary Metric]**: [Target number and timeframe]
+- **[Secondary Metric]**: [Target number and timeframe]
+- **[Engagement Metric]**: [Target number and timeframe]
 
 ### Success Criteria
-- [ ] Stable multi-provider authentication
-- [ ] Seamless payment processing (Stripe + Conekta)
-- [ ] Efficient content management for admins
-- [ ] Responsive design across devices
+- [ ] [Success criterion 1]
+- [ ] [Success criterion 2]
+- [ ] [Success criterion 3]
+- [ ] [Success criterion 4]
 
 ---
 
 ## 🔄 Current Project Status
 
 ### Current Version
-**v0.1.0** - Initial Planning
+**v[X.X.X]** - [Current status description]
 
 ### Completed
-- [ ] Project planning and requirements gathering
-- [ ] Technology stack selection
-- [ ] Architecture design
+- [ ] [Completed task 1]
+- [ ] [Completed task 2]
+- [ ] [Completed task 3]
 
 ### In Progress
-- [ ] Initial project setup
+- [ ] [Current task 1]
+- [ ] [Current task 2]
 
 ### Next Steps
-- [ ] Setup development environment
-- [ ] Create project structure
-- [ ] Implement authentication system
+- [ ] [Next task 1]
+- [ ] [Next task 2]
+- [ ] [Next task 3]
 
 ### Development Notes
-- Usar pnpm como package manager
-- Enfoque en código mantenible y clara arquitectura
-- Implementar testing desde el inicio
-- Documentación detallada para cada fase
+- [Development note 1]
+- [Development note 2]
+- [Development note 3]
+- [Development note 4]
 
 ---
 
 ## 🚀 Deployment and Production
 
 ### Development Environment
-- **URL**: localhost:3000 (Frontend) + localhost:4000 (Backend)
-- **Command**: `pnpm dev`
+- **URL**: [localhost:port or development URL]
+- **Command**: `[command to run locally]`
 
 ### Staging Environment
-- **URL**: https://staging.nimbro-pro.com
-- **Deployment**: Dokploy staging environment
+- **URL**: [https://staging.yourproject.com]
+- **Deployment**: [Staging deployment method]
 
 ### Production Environment
-- **URL**: https://nimbro-pro.com
-- **Deployment**: Dokploy production
+- **URL**: [https://yourproject.com]
+- **Deployment**: [Production deployment method]
 
 ### Variable Configuration
 ```
 # Database
-DATABASE_URL=mongodb://localhost:27017/nimbropro
+DATABASE_URL=[your database connection string]
 
-# Authentication
-AUTH_SECRET=
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
-LINKEDIN_CLIENT_ID=
-LINKEDIN_CLIENT_SECRET=
-FACEBOOK_CLIENT_ID=
-FACEBOOK_CLIENT_SECRET=
+# Authentication (if needed)
+AUTH_SECRET=[auth secret]
+GOOGLE_CLIENT_ID=[if using Google auth]
+GOOGLE_CLIENT_SECRET=[if using Google auth]
 
-# Payments
-STRIPE_SECRET_KEY=
-STRIPE_WEBHOOK_SECRET=
-CONEKTA_SECRET_KEY=
-CONEKTA_WEBHOOK_SECRET=
+# External Services (if needed)
+[SERVICE_NAME]_API_KEY=[API key for external service]
+[SERVICE_NAME]_SECRET=[Secret for external service]
 
-# Email
-EMAIL_SERVICE_API_KEY=
+# Email (if needed)
+EMAIL_SERVICE_API_KEY=[email service API key]
 ```
 
 ---

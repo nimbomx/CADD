@@ -28,7 +28,8 @@
 - How you like to be called
 - Preferred response style
 - Tools and restrictions
-- **YES, customize it** - copied to new projects
+- **YES, customize it** - template ready for your preferences
+- **NEW v1.4.3**: Clean template with placeholders for new users
 
 ### 📝 PROJECT_PLAN.md
 **The specific description of your project**
@@ -36,6 +37,7 @@
 - Features and timeline
 - Current development status
 - **YES, modify it** - specific to each project
+- **NEW v1.4.4**: Clean template with placeholders for universal use
 
 ### 🎫 TKDD_METHODOLOGY.md
 **Methodology for creating clear tasks**
@@ -58,19 +60,64 @@ Read the file .CADD/START.md
 The agent will automatically:
 - Read the instructions
 - Read your preferences
+- **NEW**: Detect if you have an existing project
+- **NEW**: Analyze your code automatically (if existing project)
 - Ask what you want to do
 - Guide you according to your response
 
-### 2. Workflow
+### 2. Automatic Project Detection (NEW v1.4.2)
+
+#### 🔍 What Gets Detected
+When you add CADD to an existing project, the agent automatically scans for:
+- **Technology files**: package.json, requirements.txt, composer.json, etc.
+- **Project structure**: src/, app/, components/, lib/, views/ folders
+- **Git repository**: Existing .git folder and history
+- **Configuration files**: Build tools, linting, testing setup
+- **Documentation**: README.md, API docs, comments
+
+#### 🧠 Automatic Analysis
+The agent analyzes your existing code to detect:
+- **Technology Stack**: Frontend, backend, database, tools
+- **Current Features**: Authentication, CRUD, API endpoints, UI components
+- **Architecture**: MVC, microservices, design patterns
+- **Code Quality**: Tests, linting, documentation coverage
+- **Development Status**: Git activity, version history, team size
+
+#### 📋 Auto-Generated Documentation
+Based on analysis, the agent automatically creates:
+- **Complete PROJECT_PLAN.md** with all detected information
+- **Feature inventory** with ✅ checkmarks for existing functionality
+- **Technology stack** with versions and dependencies
+- **Architecture analysis** with patterns and organization
+- **Next phase planning** ready for your input
+
+#### ⚡ Simplified Setup
+For existing projects, you only need to answer 2-3 questions:
+1. **Main objective**: What problem does your app solve?
+2. **Next phase**: What feature do you want to develop next?
+3. **Restrictions**: Any technical or business constraints?
+
+### 3. Workflow
 
 #### 🚀 For New Projects
 1. Agent reads START.md
 2. Agent reads PREFERENCES.md
-3. Agent reviews PROJECT_PLAN.md
-4. If empty: Asks questions to fill it
-5. If has content: Analyzes and complements it
-6. Creates development plan
-7. Generates first ticket
+3. Agent detects NO existing project files
+4. Agent reviews PROJECT_PLAN.md
+5. If empty: Asks questions to fill it
+6. If has content: Analyzes and complements it
+7. Creates development plan
+8. Generates first ticket
+
+#### 🔍 For Existing Projects (NEW)
+1. Agent reads START.md
+2. Agent reads PREFERENCES.md
+3. Agent detects existing project files
+4. Agent announces: "Proyecto existente detectado. Analizando código..."
+5. Agent automatically analyzes codebase
+6. Agent auto-fills PROJECT_PLAN.md with detected information
+7. Agent asks only 2-3 clarifying questions
+8. Ready for immediate development continuation
 
 #### ⚡ For Continuing Development
 1. Agent reads START.md
@@ -95,14 +142,63 @@ The agent will automatically:
 
 ---
 
+## First Time Setup (NEW v1.4.3)
+
+### 📋 Customize PREFERENCES.md
+**Before your first conversation, customize your preferences:**
+
+1. **Open PREFERENCES.md** and replace placeholders:
+   - `[Tu nombre aquí]` → Your actual name
+   - `[Estilo preferido]` → Brief/detailed responses
+   - `[Gestor de paquetes]` → npm, yarn, or pnpm
+   - `[Idioma]` → Spanish, English, etc.
+
+2. **Fill technology preferences**:
+   - Frontend, backend, database preferences
+   - Deployment platforms you use
+   - Development tools you prefer
+
+3. **Set your priorities**:
+   - Speed vs. quality balance
+   - Learning vs. producing focus
+   - Technical complexity preferences
+
+### 📝 Complete PROJECT_PLAN.md (NEW v1.4.4)
+**For new projects, customize the project plan:**
+
+1. **Open PROJECT_PLAN.md** and replace placeholders:
+   - `[Project Name]` → Your actual project name
+   - `[Brief description]` → What your project does
+   - `[Primary User Group]` → Who will use your app
+   - `[Core Feature 1]` → Most important functionality
+
+2. **Fill project details**:
+   - Check relevant project types (Web App, Mobile, API, etc.)
+   - Describe your target audience and use cases
+   - List main features you want to build
+   - Set technology preferences and restrictions
+
+3. **Define timeline**:
+   - Break work into phases with realistic durations
+   - Set measurable goals and success criteria
+   - Plan deployment and production setup
+
+4. **Save and start** your first conversation:
+   ```
+   "Read the file .CADD/START.md"
+   ```
+
+---
+
 ## Guide by Technical Level
 
 ### 👶 Complete Beginner
 **If you've never programmed:**
 
-1. **Customize PREFERENCES.md** basically:
+1. **Customize PREFERENCES.md** with basics:
    - Your preferred name
    - Response style you like
+   - Language preference
 
 2. **Fill PROJECT_PLAN.md** with basic ideas:
    - What do you want to create?
@@ -164,10 +260,30 @@ The agent will automatically:
 
 ## Usage Examples
 
-### Example 1: Simple E-commerce
+### Example 1: Existing Project Analysis (NEW)
 ```
 User: "Read the file .CADD/START.md"
-Agent: "Hello [name]! What do you want to do today? A) Create new project..."
+Agent: "Proyecto existente detectado. Analizando código...
+✅ Tecnologías: React 18, Node.js 16, PostgreSQL
+✅ Características: Autenticación JWT, CRUD usuarios, API REST
+✅ Estructura: 15 componentes, 8 tablas, 20 endpoints
+✅ Calidad: 85% cobertura de tests, ESLint configurado
+
+PROJECT_PLAN.md generado automáticamente.
+
+Solo necesito clarificar:
+1. ¿Cuál es el objetivo principal de la aplicación?
+2. ¿Qué quieres desarrollar en la próxima fase?
+3. ¿Hay restricciones técnicas importantes?"
+
+User: "Es una app de gestión de tareas. Quiero añadir notificaciones push."
+Agent: "Perfect. Metodología configurada. ¿Empezamos con las notificaciones?"
+```
+
+### Example 2: Simple E-commerce (New Project)
+```
+User: "Read the file .CADD/START.md"
+Agent: "No se detectó proyecto existente. Hello [name]! What do you want to do today? A) Create new project..."
 User: "A"
 Agent: "I see PROJECT_PLAN.md is empty. What type of project is it?"
 User: "An online store to sell clothing"
@@ -175,10 +291,10 @@ Agent: "Perfect. Who are your target users?"
 ...
 ```
 
-### Example 2: Continuing Development
+### Example 3: Continuing Development
 ```
 User: "Read the file .CADD/START.md"
-Agent: "Hello [name]! What do you want to do today? A) Create new project..."
+Agent: "Proyecto ya configurado. Hello [name]! What do you want to do today? A) Create new project..."
 User: "B - Continue current phase"
 Agent: "I see you're in Phase 2. You completed login. Shall we continue with the shopping cart?"
 ```
@@ -189,15 +305,22 @@ Agent: "I see you're in Phase 2. You completed login. Shall we continue with the
 
 ### ✅ Do This
 - **Always** start with "Read the file .CADD/START.md"
-- **Customize** PREFERENCES.md with your preferences
+- **First time**: Customize PREFERENCES.md with your preferences (v1.4.3)
+- **New projects**: Complete PROJECT_PLAN.md template placeholders (v1.4.4)
 - **Keep** PROJECT_PLAN.md updated
 - **Be specific** in your responses
 - **Ask** when you don't understand something
 - **Review** generated code
+- **NEW**: Trust the automatic analysis - it's usually very accurate
+- **NEW**: For existing projects, just answer the 2-3 questions asked
+- **NEW**: Check auto-generated PROJECT_PLAN.md to understand what was detected
 
 ### ❌ Avoid This
 - Don't skip the START.md step
 - Don't assume the agent remembers previous conversations
+- **NEW**: Don't manually fill PROJECT_PLAN.md if you have existing code
+- **NEW**: Don't worry about analyzing your own code - let CADD do it
+- **NEW**: Don't provide lengthy explanations for existing projects
 - Don't modify START.md or TKDD_METHODOLOGY.md
 - Don't leave PROJECT_PLAN.md empty for too long
 - Don't be afraid to ask questions

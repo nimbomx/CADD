@@ -27,7 +27,118 @@
 3. If first time, ask if they need to update PREFERENCES.md
 ```
 
-### 1. MANDATORY FIRST ACTION
+### 1. MANDATORY FIRST CHECK - EXISTING PROJECT DETECTION
+**BEFORE** asking "What do you want to do today?", **ALWAYS** check for existing project:
+
+```
+1. SCAN current directory for existing project indicators:
+   - package.json, requirements.txt, composer.json, Gemfile, go.mod
+   - Common project folders: src/, app/, components/, lib/, views/
+   - Git repository (.git folder)
+   - README.md or documentation files
+   - Configuration files: webpack.config.js, vite.config.js, etc.
+
+2. IF EXISTING PROJECT DETECTED:
+   - ANNOUNCE: "Proyecto existente detectado. Analizando código..."
+   - EXECUTE: Automatic Project Analysis (see section below)
+   - FILL: PROJECT_PLAN.md with analyzed information
+   - ASK: Only for missing critical information
+   - PROCEED: To simplified workflow
+
+3. IF NO EXISTING PROJECT: Continue with standard workflow
+```
+
+### 2. AUTOMATIC PROJECT ANALYSIS (for existing projects)
+When existing project is detected, execute this comprehensive analysis:
+
+#### Technology Stack Detection
+- **Frontend**: React, Vue, Angular, Svelte, vanilla JS from package.json dependencies
+- **Backend**: Node.js, Python, PHP, Java, C#, Go, Ruby from files and dependencies
+- **Database**: PostgreSQL, MySQL, MongoDB, SQLite from connection strings/ORMs
+- **Mobile**: React Native, Flutter, Swift, Kotlin from project structure
+- **Build Tools**: Webpack, Vite, Rollup, Parcel from config files
+- **Testing**: Jest, Mocha, Cypress, Playwright from dependencies
+
+#### Project Structure Analysis
+- **Folder Purpose**: Identify src/, components/, utils/, api/, models/, views/
+- **Architecture Pattern**: MVC, microservices, monolithic from structure
+- **Code Organization**: Naming conventions, file structure patterns
+- **Configuration**: Environment files, build configs, linting setup
+
+#### Feature Detection
+- **Authentication**: Login/register components, JWT/OAuth patterns
+- **CRUD Operations**: Create, Read, Update, Delete patterns in code
+- **API Endpoints**: REST routes, GraphQL schemas, WebSocket connections
+- **UI Components**: Forms, tables, modals, navigation elements
+- **Business Logic**: Data validation, processing, workflow patterns
+
+#### Code Quality Assessment
+- **Testing**: Test files, coverage reports, testing framework setup
+- **Linting**: ESLint, Prettier, other code quality tools
+- **Documentation**: README, JSDoc, API documentation
+- **Security**: Input validation, authentication patterns, HTTPS setup
+
+#### Git Activity Analysis
+- **Repository Status**: Active development, last commits, branch structure
+- **Team Size**: Commit authors, development patterns
+- **Release History**: Tags, versions, changelog patterns
+- **Development Stage**: Early, active, mature, maintenance
+
+### 3. AUTO-FILL PROJECT_PLAN.md
+Based on automatic analysis, populate PROJECT_PLAN.md with:
+
+```markdown
+# Project Plan - AUTO-GENERATED
+
+## Project Information
+**Project Name**: [From package.json/folder name]
+**Main Objective**: [Inferred from README.md/code analysis]
+**Target Audience**: [Inferred from UI/API patterns]
+**Project Type**: [Web App/API/Mobile App/Desktop/Library]
+
+## Technology Stack (Auto-Detected)
+**Frontend**: [Detected frameworks and versions]
+**Backend**: [Detected backend technologies]
+**Database**: [Detected database systems]
+**Infrastructure**: [Detected deployment/containerization]
+
+## Current Features (Analyzed)
+- [List of detected features with ✅ checkmarks]
+- [Authentication, CRUD, API endpoints, UI components]
+- [Database tables, business logic, integrations]
+
+## Architecture Analysis
+**Pattern**: [MVC/Microservices/Monolithic]
+**State Management**: [Redux/Context API/Vuex/etc.]
+**Database Design**: [Relational/NoSQL/Hybrid]
+**API Design**: [REST/GraphQL/RPC]
+
+## Development Status
+**Current Version**: [From package.json/git tags]
+**Last Activity**: [Git commit analysis]
+**Code Quality**: [Testing/linting/documentation status]
+**Team Size**: [Estimated from git history]
+
+## Next Phase Planning (To be configured)
+**Phase**: [Auto-increment from detected version]
+**Focus**: [To be determined with user input]
+**Priority Features**: [To be determined]
+```
+
+### 4. SIMPLIFIED WORKFLOW (for existing projects)
+After auto-analysis, ask minimal questions:
+
+```
+Análisis completo. Solo necesito clarificar:
+
+1. ¿Cuál es el objetivo principal de la aplicación?
+2. ¿Qué característica quieres desarrollar en la próxima fase?
+3. ¿Hay restricciones técnicas importantes?
+
+Responde y estaremos listos para continuar el desarrollo.
+```
+
+### 5. STANDARD WORKFLOW (for new projects)
 After reading START.md and PREFERENCES.md, **ALWAYS** ask the user:
 
 ```
@@ -40,7 +151,7 @@ D) 🎯 Plan new version (milestone)
 E) ⚙️ Update preferences (PREFERENCES.md)
 ```
 
-### 2. ACCORDING TO RESPONSE
+### 6. ACCORDING TO RESPONSE
 
 #### A) Create New Project
 1. Read PROJECT_PLAN.md
@@ -350,20 +461,31 @@ Use the standard PROJECT_PLAN.md template to organize it.
 
 ## Project Status Detection
 
+### Automatic Detection (NEW)
+The system now automatically detects project status before asking what to do:
+
 ### New Project
+- No existing project files detected
 - PROJECT_PLAN.md empty or incomplete
-- No code files
+- No code files in common locations
 - No development history
 
+### Existing Project (Auto-Detected)
+- **Technology files found**: package.json, requirements.txt, etc.
+- **Project structure detected**: src/, app/, components/ folders
+- **Git repository present**: .git folder exists
+- **Automatic analysis executed**: PROJECT_PLAN.md auto-filled
+- **Ready for development**: Minimal setup questions only
+
 ### Project in Development
-- PROJECT_PLAN.md complete
-- Existing code files
-- Defined phases with progress
+- PROJECT_PLAN.md complete (auto-generated or manual)
+- Existing code files with detected features
+- Defined phases with progress tracking
 
 ### Mature Project
-- PROJECT_PLAN.md with versions
-- Functional deployed code
-- Release history
+- PROJECT_PLAN.md with versions and release history
+- Functional deployed code with detected patterns
+- Established development workflow and Git activity
 
 ---
 

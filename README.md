@@ -2,7 +2,7 @@
 
 > **Revolutionary methodology for AI-assisted software development**
 
-[![Version](https://img.shields.io/badge/version-1.4.1-blue.svg)](https://github.com/nimbomx/CADD/releases)
+[![Version](https://img.shields.io/badge/version-1.4.4-blue.svg)](https://github.com/nimbomx/CADD/releases)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-Production%20Ready-success.svg)](.)
 
@@ -30,7 +30,7 @@
 "Read the file .CADD/START.md"
 ```
 
-### For Existing Projects ⭐ NEW!
+### For Existing Projects ⭐ IMPLEMENTED!
 ```bash
 # 1. Drag .CADD folder into your existing project
 # 2. Start conversation with AI agent:
@@ -39,6 +39,7 @@
 # ✅ Automatic analysis happens instantly
 # ✅ Minimal setup (just 2-3 questions)
 # ✅ Preserves all your existing work
+# ✅ Auto-generates PROJECT_PLAN.md from your code
 ```
 
 ---
@@ -212,7 +213,30 @@ tickets/                  # 🎫 TKDD ticket organization
 ### Installation
 1. **Download** the `.CADD/` folder from this repository
 2. **Copy** it to your project directory (new or existing)
-3. **Start** conversation with your AI agent
+3. **Customize** PREFERENCES.md with your personal preferences (NEW v1.4.3)
+4. **Complete** PROJECT_PLAN.md for new projects (NEW v1.4.4)
+5. **Start** conversation with your AI agent
+
+### First Time Setup (NEW v1.4.4)
+Before your first conversation, customize your templates:
+
+#### 1. **Customize PREFERENCES.md**
+1. **Open** `.CADD/PREFERENCES.md`
+2. **Replace** placeholders `[...]` with your actual preferences:
+   - `[Tu nombre aquí]` → Your name
+   - `[Estilo preferido]` → Brief/detailed responses
+   - `[Gestor de paquetes]` → npm, yarn, pnpm
+   - `[Idioma]` → Spanish, English, etc.
+
+#### 2. **Complete PROJECT_PLAN.md** (for new projects)
+1. **Open** `.CADD/PROJECT_PLAN.md`
+2. **Replace** placeholders `[...]` with your project details:
+   - `[Project Name]` → Your actual project name
+   - `[Brief description]` → What your project does
+   - `[Primary User Group]` → Who will use your app
+   - `[Core Feature 1]` → Most important functionality
+3. **Check** relevant project types and fill all sections
+4. **Save** and continue with first conversation
 
 ### First Conversation
 ```
@@ -230,10 +254,11 @@ tickets/                  # 🎫 TKDD ticket organization
 
 #### For Existing Projects:
 1. ✅ Agent detects existing project automatically
-2. ✅ Analyzes codebase, structure, and technologies
-3. ✅ Auto-generates PROJECT_PLAN.md with findings
-4. ✅ Asks minimal questions (business goals, next phase)
-5. ✅ Ready for immediate development continuation
+2. ✅ Announces: "Proyecto existente detectado. Analizando código..."
+3. ✅ Analyzes codebase, structure, and technologies
+4. ✅ Auto-generates PROJECT_PLAN.md with complete findings
+5. ✅ Asks only 2-3 clarifying questions (business goals, next phase)
+6. ✅ Ready for immediate development continuation
 
 ---
 
@@ -267,7 +292,29 @@ tickets/                  # 🎫 TKDD ticket organization
 
 ## 🔄 Version History
 
-### v1.4.1 (Current) - Git Repository Security
+### v1.4.4 (Current) - Complete Clean Template Distribution
+- 🧹 **Clean PROJECT_PLAN.md** - Removed all project-specific information
+- 📋 **Universal template format** - All sections now use placeholders
+- 🔄 **Ready for any project** - Works for web apps, mobile, APIs, etc.
+- 📚 **Complete documentation** - All files now template-ready
+- 🚀 **Production distribution** - Fully anonymous and universally applicable
+
+### v1.4.3 - Clean Template for Universal Distribution
+- 🧹 **Clean PREFERENCES.md** - Removed personal preferences, now a universal template
+- 📋 **Template format** - Clear placeholders for new users to fill
+- 🌐 **Universal distribution** - Ready for any user without personal data
+- 📚 **Enhanced examples** - Better guidance for preference configuration
+- 🚀 **Production ready** - Completely clean for public distribution
+
+### v1.4.2 - Automatic Project Analysis Implementation
+- 🔍 **Complete implementation** of automatic project detection
+- 🧠 **Intelligent code analysis** for existing projects
+- 📋 **Auto-generated PROJECT_PLAN.md** from codebase analysis
+- ⚡ **Instant setup** with only 2-3 questions for existing projects
+- 🔄 **Simplified workflow** for existing project integration
+- 📚 **Updated documentation** with examples and best practices
+
+### v1.4.1 - Git Repository Security
 - 🔒 **Safe Git handling** for existing repositories
 - ⚠️ **Explicit warnings** before disconnecting from remotes
 - ✅ **Three clear options** for repository management
@@ -317,6 +364,8 @@ MIT License - Feel free to use CADD in any project, commercial or personal.
 - **Create** new issues for bugs or feature requests
 
 ### Best Practices
+- **First time**: Customize PREFERENCES.md with your personal preferences (v1.4.3)
+- **New projects**: Complete PROJECT_PLAN.md template placeholders (v1.4.4)
 - Always start conversations with `"Read the file .CADD/START.md"`
 - Keep PROJECT_PLAN.md updated as your project evolves
 - Use TKDD methodology for all development tasks

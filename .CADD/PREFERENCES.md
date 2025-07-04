@@ -7,32 +7,32 @@
 ## 👤 Información Personal
 
 ### Nombre
-**Ernesto** - Cómo prefieres que te llamen
+**[Tu nombre aquí]** - Cómo prefieres que te llamen
 
 ### Estilo de Comunicación
-- **Respuestas breves** - Estilo de respuesta preferido
-- **Formal** - Nivel de formalidad
-- **Directo y conciso** - Instrucciones adicionales sobre comunicación
+- **[Estilo preferido]** - Respuestas breves/detalladas, formal/informal
+- **[Nivel de formalidad]** - Formal, informal, casual
+- **[Instrucciones adicionales]** - Cualquier preferencia específica
 
 ---
 
 ## 🛠️ Preferencias Técnicas
 
 ### Herramientas Obligatorias
-- **pnpm** - Gestor de paquetes
-- **Español** - Idioma de comunicación
-- **Cursor** - Editor/IDE preferido
+- **[Gestor de paquetes]** - npm, yarn, pnpm
+- **[Idioma]** - Español, inglés, otro
+- **[Editor/IDE]** - VS Code, Cursor, WebStorm, otro
 
 ### Tecnologías Preferidas
-- **Frontend**: Next.js, Astro
-- **Backend**: NestJS
-- **Base de datos**: MongoDB
-- **Deployment**: Dokploy
+- **Frontend**: [React, Vue, Angular, Next.js, etc.]
+- **Backend**: [Node.js, Python, Java, C#, etc.]
+- **Base de datos**: [PostgreSQL, MongoDB, MySQL, etc.]
+- **Deployment**: [Vercel, Netlify, AWS, etc.]
 
 ### Restricciones Técnicas
-- Ninguna - Abierto a cualquier tecnología
-- Sin patrones específicos a evitar
-- Sin limitaciones específicas del entorno
+- [Especificar limitaciones técnicas]
+- [Patrones a evitar]
+- [Limitaciones del entorno]
 
 ---
 
@@ -40,76 +40,75 @@
 
 ### Formato de Tickets
 - **TKDD** - Usar siempre formato Ticket-Driven Development
-- **Detallado** - Nivel de detalle en tickets
-- **Incluir casos específicos** - Siempre proporcionar ejemplos
+- **[Nivel de detalle]** - Conciso, detallado, muy específico
+- **[Incluir ejemplos]** - Siempre, a veces, nunca
 
 ### Estructura de Proyectos
-- **Incremental** - Preferencia de desarrollo por fases
-- **Documentación detallada** - Nivel de documentación deseado
-- **Organización clara** - Estándares de carpetas y archivos
+- **[Enfoque]** - Incremental, completo, por módulos
+- **[Documentación]** - Básica, detallada, exhaustiva
+- **[Organización]** - Estándares de carpetas y archivos
 
 ### Estilo de Código
-- **Estándar del lenguaje** - Prettier, ESLint según tecnología
-- **Convenciones claras** - Naming conventions consistentes
-- **Arquitectura limpia** - Patrones arquitectónicos mantenibles
+- **[Estándar]** - Prettier, ESLint, estándar del lenguaje
+- **[Convenciones]** - Naming conventions específicas
+- **[Arquitectura]** - Patrones arquitectónicos preferidos
 
 ---
 
 ## 🎯 Objetivos y Valores
 
 ### Prioridades
-1. **Mantenibilidad** - Código fácil de mantener y modificar
-2. **Claridad** - Código claro y comprensible
-3. **Simplicidad** - Soluciones simples y elegantes
+1. **[Prioridad 1]** - Velocidad, calidad, mantenibilidad, etc.
+2. **[Prioridad 2]** - Simplicidad, funcionalidad, escalabilidad
+3. **[Prioridad 3]** - Rendimiento, seguridad, experiencia
 
 ### Enfoques Preferidos
-- **Calidad sobre Velocidad** - Priorizando código bien estructurado
-- **Estabilidad e Innovación** - Balance entre ambos enfoques
-- **Simplicidad con Funcionalidad** - Soluciones simples pero completas
+- **[Velocidad vs Calidad]** - Rápido y funcional vs. perfecto y robusto
+- **[Innovación vs Estabilidad]** - Tecnologías nuevas vs. probadas
+- **[Simplicidad vs Funcionalidad]** - Minimalista vs. completo
 
 ### Evitar
-- **Complejidad innecesaria** - Soluciones over-engineered
-- **Código difícil de leer** - Patrones confusos
-- **Duplicación de código** - Mantener principio DRY
+- **[Evitar específicamente]** - Patrones, librerías, enfoques a evitar
+- **[Restricciones]** - Limitaciones importantes
+- **[No usar]** - Herramientas prohibidas
 
 ---
 
 ## 📝 Notas Especiales
 
 ### Contexto Personal
-- **Avanzado** - Nivel técnico
-- **Amplia experiencia** - Conocimiento profundo de tecnologías
-- **Mejores prácticas** - Enfoque en calidad y estándares
+- **[Nivel técnico]** - Principiante, intermedio, avanzado
+- **[Experiencia]** - Áreas de experiencia específicas
+- **[Enfoque]** - Aprender, producir, experimentar
 
 ### Restricciones del Proyecto
-- **Desarrollo incremental** - Construcción por fases
-- **Sin restricciones de recursos** - Flexibilidad en herramientas
-- **Trabajo independiente** - Capacidad de decisión técnica
+- **[Tipo de desarrollo]** - Personal, comercial, educativo
+- **[Recursos]** - Limitaciones de tiempo, presupuesto, equipo
+- **[Autonomía]** - Decisión independiente, consulta requerida
 
 ### Configuraciones Específicas
-- **Cursor IDE** - Entorno de desarrollo preferido
-- **Workflow incremental** - Procesos de trabajo por iteraciones
-- **Stack moderno** - Herramientas actualizadas y eficientes
+- **[Entorno]** - Herramientas de desarrollo específicas
+- **[Workflow]** - Procesos de trabajo preferidos
+- **[Stack]** - Combinaciones tecnológicas favoritas
 
 ---
 
 ## 🔄 Historial de Cambios
 
-### 2024-12-19 - Configuración inicial
-- **Nombre**: Ernesto
-- **Estilo**: Formal, breve, directo
-- **Herramientas**: pnpm, Cursor, Español
-- **Stack**: Next.js/Astro, NestJS, MongoDB, Dokploy
-- **Prioridades**: Mantenibilidad, claridad, simplicidad
+### [Fecha] - [Descripción del cambio]
+- **[Campo modificado]**: [Valor anterior] → [Valor nuevo]
+- **[Razón]**: [Por qué se hizo el cambio]
 
 ---
 
-**Última actualización**: 2024-12-19
-**Versión**: 1.0
+**Última actualización**: [Fecha]
+**Versión**: [Número de versión]
 
 ---
 
-> **Para el agente**: Este archivo es tu guía sobre cómo interactuar con el usuario. Léelo SIEMPRE al inicio de cada conversación y aplica estas preferencias consistentemente.
+> **Para el agente**: Este archivo es tu guía sobre cómo interactuar con el usuario. Léelo SIEMPRE al inicio de cada conversación y aplica estas preferencias consistentemente. 
+
+> **Para usuarios nuevos**: Este es un template limpio. Reemplaza todos los placeholders `[...]` con tus preferencias personales antes de usar CADD.
 
 ---
 
@@ -132,10 +131,26 @@
 - **VS Code** - Editor preferido
 
 ### Tecnologías Preferidas
-- Frontend: React, TypeScript
-- Backend: Node.js, Express
-- Base de datos: PostgreSQL
-- Deployment: Vercel
+- **Frontend**: React, TypeScript
+- **Backend**: Node.js, Express
+- **Base de datos**: PostgreSQL
+- **Deployment**: Vercel
+
+## 🎯 Objetivos y Valores
+### Prioridades
+1. **Velocidad** - Entregar funcionalidad rápidamente
+2. **Simplicidad** - Soluciones directas y fáciles de entender
+3. **Aprendizaje** - Mejorar habilidades técnicas
+
+### Enfoques Preferidos
+- **Velocidad sobre Perfección** - Funcional primero, optimizar después
+- **Tecnologías Estables** - Usar herramientas probadas
+- **Funcionalidad Completa** - Preferir soluciones completas
+
+### Evitar
+- **Frameworks complejos** - Evitar over-engineering
+- **Configuraciones excesivas** - Mantener setup simple
+- **Patrones confusos** - Código directo y claro
 ```
 
 ---
