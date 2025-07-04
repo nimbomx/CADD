@@ -26,6 +26,7 @@
 2. Apply those preferences throughout the conversation
 3. If PREFERENCES.md shows "[Not configured]", treat as not set
 4. If first time with unconfigured preferences, offer to set them up
+5. If user previously declined preference setup, do NOT ask again
 ```
 
 ### 1. MANDATORY FIRST ACTION
@@ -49,10 +50,12 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 1. Read PROJECT_PLAN.md
 2. If empty: Ask questions to fill it
 3. If has content: Analyze and complement it
-4. Create initial development plan
-5. Generate first TKDD ticket
-6. **ASK**: "Do you want to prepare this project for a Git repository?"
-7. **IF YES**: Execute Git Repository Setup (see section below)
+4. **CHECK**: If user mentions both frontend AND backend development
+5. **IF YES**: Suggest Turborepo for monorepo management (see Turborepo Suggestion section)
+6. Create initial development plan
+7. Generate first TKDD ticket
+8. **ASK**: "Do you want to prepare this project for a Git repository?"
+9. **IF YES**: Execute Git Repository Setup (see section below)
 
 #### B) Continue Current Phase
 1. Read PROJECT_PLAN.md
@@ -81,6 +84,39 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 2. Ask what they want to change/add
 3. Update PREFERENCES.md with new preferences
 4. Confirm changes applied
+5. **MENTION**: "You can always change your preferences by asking me to update them."
+
+---
+
+## Turborepo Suggestion
+
+### When to Suggest
+- User mentions developing BOTH frontend AND backend
+- During project planning phase (option A)
+- Before finalizing technology stack
+
+### How to Suggest
+```
+I notice you're planning both frontend and backend development. 
+
+Consider using **Turborepo** for monorepo management:
+✅ Shared code between frontend/backend
+✅ Optimized builds with caching
+✅ Parallel development workflows
+✅ Better dependency management
+
+Would you like me to include Turborepo in your technology stack?
+```
+
+### If User Accepts
+- Add Turborepo to PROJECT_PLAN.md technology stack
+- Suggest appropriate monorepo structure
+- Include Turborepo-optimized .gitignore patterns
+- Mention monorepo benefits in development plan
+
+### If User Declines
+- Continue with standard separate frontend/backend approach
+- Do not mention Turborepo again unless user asks
 
 ---
 
@@ -95,6 +131,7 @@ E) ⚙️ Update preferences (PREFERENCES.md)
    - Based on technology stack from PROJECT_PLAN.md
    - Include specific patterns for the project type
    - Add common patterns for development tools
+   - **IF TURBOREPO**: Include monorepo-specific patterns
 
 2. **Generate README.md**:
    - Use project name from PROJECT_PLAN.md
@@ -103,6 +140,7 @@ E) ⚙️ Update preferences (PREFERENCES.md)
    - Include installation and usage instructions
    - Add project structure if applicable
    - Include any important notes from PROJECT_PLAN.md
+   - **IF TURBOREPO**: Include monorepo setup instructions
 
 3. **Initialize Git Repository**:
    - Run `git init` if not already initialized
@@ -120,6 +158,7 @@ Base the .gitignore on the technology stack:
 - **Go**: Include vendor/, *.exe
 - **Ruby**: Include .bundle, vendor/bundle
 - **PHP**: Include vendor/, .env
+- **Turborepo**: Include .turbo, apps/**/dist, packages/**/dist
 - **General**: Include IDE files, OS files, logs
 
 ### README.md Template Generation
@@ -141,14 +180,17 @@ Structure the README based on PROJECT_PLAN.md:
 ## Installation
 
 [Generate installation instructions based on stack]
+[IF TURBOREPO: Include pnpm install and turbo commands]
 
 ## Usage
 
 [Basic usage instructions]
+[IF TURBOREPO: Include turbo dev, turbo build commands]
 
 ## Project Structure
 
 [If applicable, show main folders]
+[IF TURBOREPO: Show apps/ and packages/ structure]
 
 ## Contributing
 
@@ -242,6 +284,20 @@ Structure the README based on PROJECT_PLAN.md:
 - **Don't assume** examples are real preferences
 - **Only configured values** should be applied
 - **Offer setup** if preferences are mostly unconfigured
+
+### Preferences Management
+- **FIRST TIME**: Offer to set up preferences if mostly unconfigured
+- **DURING SETUP**: Mention "You can always change your preferences by asking me to update them"
+- **IF USER DECLINES**: Say "Just ask me to update your preferences whenever you want. I won't ask again."
+- **NEVER ASK AGAIN**: If user declined preference setup, do not offer again
+- **ON REQUEST**: Always help when user explicitly asks to update preferences
+
+### Turborepo Integration
+- **SUGGEST** when user mentions both frontend AND backend development
+- **EXPLAIN BENEFITS** briefly: shared code, optimized builds, parallel workflows
+- **RESPECT DECISION** if user declines, don't mention again
+- **INTEGRATE** into .gitignore and README if accepted
+- **INCLUDE** monorepo structure in project planning
 
 ### To Complete Empty PROJECT_PLAN.md
 If PROJECT_PLAN.md is empty, ask IN ORDER:
