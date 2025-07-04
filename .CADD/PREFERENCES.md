@@ -2,39 +2,37 @@
 
 > **Este archivo contiene las preferencias personales del usuario. El agente debe leerlo SIEMPRE y aplicar estas preferencias en toda la conversación.**
 
-> **Instrucciones para el Usuario:** Personaliza este archivo con tus preferencias. Reemplaza los placeholders [entre corchetes] con tus valores específicos.
-
 ---
 
 ## 👤 Información Personal
 
 ### Nombre
-**[Tu nombre]** - Cómo prefieres que te llamen
+**Ernesto** - Cómo prefieres que te llamen
 
 ### Estilo de Comunicación
-- **[Respuestas cortas/detalladas]** - Estilo de respuesta preferido
-- **[Formal/informal]** - Nivel de formalidad
-- **[Específicas]** - Instrucciones adicionales sobre comunicación
+- **Respuestas breves** - Estilo de respuesta preferido
+- **Formal** - Nivel de formalidad
+- **Directo y conciso** - Instrucciones adicionales sobre comunicación
 
 ---
 
 ## 🛠️ Preferencias Técnicas
 
 ### Herramientas Obligatorias
-- **[Gestor de paquetes]** - npm, pnpm, yarn, etc.
-- **[Idioma]** - Español, inglés, etc.
-- **[Editor/IDE]** - VS Code, Cursor, etc.
+- **pnpm** - Gestor de paquetes
+- **Español** - Idioma de comunicación
+- **Cursor** - Editor/IDE preferido
 
 ### Tecnologías Preferidas
-- **Frontend**: [React, Vue, Angular, Svelte, etc.]
-- **Backend**: [Node.js, Python, Java, etc.]
-- **Base de datos**: [PostgreSQL, MongoDB, MySQL, etc.]
-- **Deployment**: [Vercel, AWS, Netlify, etc.]
+- **Frontend**: Next.js, Astro
+- **Backend**: NestJS
+- **Base de datos**: MongoDB
+- **Deployment**: Dokploy
 
 ### Restricciones Técnicas
-- [Tecnologías que NO quieres usar]
-- [Patrones o prácticas que evitar]
-- [Limitaciones específicas del entorno]
+- Ninguna - Abierto a cualquier tecnología
+- Sin patrones específicos a evitar
+- Sin limitaciones específicas del entorno
 
 ---
 
@@ -42,73 +40,76 @@
 
 ### Formato de Tickets
 - **TKDD** - Usar siempre formato Ticket-Driven Development
-- **[Nivel de detalle]** - Minimalista, detallado, exhaustivo
-- **[Ejemplos]** - Incluir casos específicos siempre/a veces/nunca
+- **Detallado** - Nivel de detalle en tickets
+- **Incluir casos específicos** - Siempre proporcionar ejemplos
 
 ### Estructura de Proyectos
-- **[Incremental/completo]** - Preferencia de desarrollo
-- **[Documentación]** - Nivel de documentación deseado
-- **[Organización]** - Estándares de carpetas y archivos
+- **Incremental** - Preferencia de desarrollo por fases
+- **Documentación detallada** - Nivel de documentación deseado
+- **Organización clara** - Estándares de carpetas y archivos
 
 ### Estilo de Código
-- **[Estándar]** - Prettier, ESLint, específico del lenguaje
-- **[Convenciones]** - Naming conventions preferidas
-- **[Arquitectura]** - Patrones arquitectónicos favoritos
+- **Estándar del lenguaje** - Prettier, ESLint según tecnología
+- **Convenciones claras** - Naming conventions consistentes
+- **Arquitectura limpia** - Patrones arquitectónicos mantenibles
 
 ---
 
 ## 🎯 Objetivos y Valores
 
 ### Prioridades
-1. **[Prioridad 1]** - Tu valor más importante
-2. **[Prioridad 2]** - Segundo en importancia
-3. **[Prioridad 3]** - Tercer valor clave
+1. **Mantenibilidad** - Código fácil de mantener y modificar
+2. **Claridad** - Código claro y comprensible
+3. **Simplicidad** - Soluciones simples y elegantes
 
 ### Enfoques Preferidos
-- **[Calidad vs Velocidad]** - Tu balance preferido
-- **[Innovación vs Estabilidad]** - Qué priorizas
-- **[Simplicidad vs Funcionalidad]** - Tu enfoque
+- **Calidad sobre Velocidad** - Priorizando código bien estructurado
+- **Estabilidad e Innovación** - Balance entre ambos enfoques
+- **Simplicidad con Funcionalidad** - Soluciones simples pero completas
 
 ### Evitar
-- **[Comportamientos específicos]** - Qué no te gusta
-- **[Prácticas]** - Metodologías que rechazas
-- **[Patrones]** - Antipatrones que evitar
+- **Complejidad innecesaria** - Soluciones over-engineered
+- **Código difícil de leer** - Patrones confusos
+- **Duplicación de código** - Mantener principio DRY
 
 ---
 
 ## 📝 Notas Especiales
 
 ### Contexto Personal
-- **[Nivel técnico]** - Principiante, intermedio, avanzado
-- **[Experiencia]** - Años de experiencia, especialidades
-- **[Objetivos de aprendizaje]** - Qué quieres mejorar
+- **Avanzado** - Nivel técnico
+- **Amplia experiencia** - Conocimiento profundo de tecnologías
+- **Mejores prácticas** - Enfoque en calidad y estándares
 
 ### Restricciones del Proyecto
-- **[Tiempo]** - Limitaciones temporales típicas
-- **[Recursos]** - Limitaciones de presupuesto/hardware
-- **[Equipo]** - Si trabajas solo o en equipo
+- **Desarrollo incremental** - Construcción por fases
+- **Sin restricciones de recursos** - Flexibilidad en herramientas
+- **Trabajo independiente** - Capacidad de decisión técnica
 
 ### Configuraciones Específicas
-- **[Entorno de desarrollo]** - Configuraciones específicas
-- **[Workflows]** - Procesos de trabajo preferidos
-- **[Integraciones]** - Herramientas que usas regularmente
+- **Cursor IDE** - Entorno de desarrollo preferido
+- **Workflow incremental** - Procesos de trabajo por iteraciones
+- **Stack moderno** - Herramientas actualizadas y eficientes
 
 ---
 
 ## 🔄 Historial de Cambios
 
-### [Fecha] - Configuración inicial
-- **Nombre**: [Tu nombre]
-- **Estilo**: [Tu estilo preferido]
-- **Herramientas**: [Tus herramientas principales]
-
-### [Fecha] - [Descripción del cambio]
-- [Qué cambió y por qué]
+### 2024-12-19 - Configuración inicial
+- **Nombre**: Ernesto
+- **Estilo**: Formal, breve, directo
+- **Herramientas**: pnpm, Cursor, Español
+- **Stack**: Next.js/Astro, NestJS, MongoDB, Dokploy
+- **Prioridades**: Mantenibilidad, claridad, simplicidad
 
 ---
 
-**Última actualización**: [Fecha]
-**Versión**: [Número de versión]
+**Última actualización**: 2024-12-19
+**Versión**: 1.0
+
+---
+
+> **Para el agente**: Este archivo es tu guía sobre cómo interactuar con el usuario. Léelo SIEMPRE al inicio de cada conversación y aplica estas preferencias consistentemente.
 
 ---
 
@@ -139,4 +140,4 @@
 
 ---
 
-> **Para el agente**: Este archivo es tu guía sobre cómo interactuar con el usuario. Léelo SIEMPRE al inicio de cada conversación y aplica estas preferencias consistentemente. Si encuentras placeholders [entre corchetes], pregunta al usuario para completarlos. 
+> **Para el agente**: Este archivo es tu guía sobre cómo interactuar con el usuario. Léelo SIEMPRE al inicio de cada conversación y aplica estas preferencias consistentemente. 

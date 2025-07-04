@@ -1,92 +1,247 @@
-# CADD - Context-Assisted Development Driven
+# Nimbo Pro - Portal de Transformación Digital con AI
 
-> **Metodología para desarrollo asistido por IA usando contexto estructurado**
+Portal web dedicado a la transformación digital con énfasis en AI Transformation. La plataforma ofrece contenido gratuito y servicios premium para programadores y empresas (PYMES) que buscan acompañamiento en transformación digital con enfoque AI-first.
 
-## ¿Qué es este repositorio?
+## 🚀 Características Principales
 
-Este repositorio contiene la metodología **CADD** (Context-Assisted Development Driven) - un sistema para trabajar efectivamente con agentes de IA en desarrollo de software.
+### MVP (Versión 1.0)
+- **🔐 Sistema de Autenticación Multi-proveedor**: Email/Password, Google, GitHub, LinkedIn, Facebook
+- **📚 Portal de Contenido Gratuito**: Artículos, casos de estudio, recursos básicos
+- **👥 Área de Usuario Registrado**: Dashboard personalizado por tipo de usuario
+- **💳 Sistema de Pagos Híbrido**: Stripe (internacional) + Conekta (México)
+- **⚙️ CMS Integrado**: Para administradores, gestión de contenido
+- **📊 Perfiles de Usuario**: Diferenciación entre Programadores y Empresas
 
-## Archivos principales
+### Características Avanzadas (V2+)
+- **🎓 Cursos/Tutoriales Interactivos**: Contenido educativo estructurado
+- **💬 Sistema de Consultorías**: Booking y gestión de sesiones
+- **📈 Herramientas de Evaluación**: Assessment de madurez digital
+- **🌐 Comunidad/Forum**: Interacción entre usuarios
+- **🏆 Certificaciones**: Sistema de badges y certificados
 
-- **`.CADD/START.md`** - Punto de partida universal para agentes
-- **`.CADD/PREFERENCES.md`** - Plantilla de preferencias del usuario
-- **`.CADD/PROJECT_PLAN.md`** - Plantilla de plan de proyecto
-- **`.CADD/TKDD_METHODOLOGY.md`** - Metodología para tickets de desarrollo
-- **`.CADD/USER_GUIDE.md`** - Guía completa para usuarios
+## 🛠️ Stack Tecnológico
 
-## Nuevas Funcionalidades v1.1.0
+### Frontend
+- **Next.js 14** - Framework React con App Router
+- **TypeScript** - Tipado estático
+- **Tailwind CSS** - Framework CSS utility-first
+- **React Hook Form** - Gestión de formularios
+- **Zustand** - Gestión de estado global
 
-### 🔧 **Configuración Automática de Git**
-- ✅ **Genera .gitignore** basado en stack tecnológico
-- ✅ **Crea README.md** completo desde PROJECT_PLAN.md
-- ✅ **Inicializa repositorio** con commit inicial
-- ✅ **Sugiere** configuración de repositorio remoto
+### Backend
+- **NestJS** - Framework Node.js enterprise
+- **TypeScript** - Tipado estático
+- **MongoDB** - Base de datos NoSQL
+- **Mongoose** - ODM para MongoDB
+- **Passport.js** - Autenticación multi-proveedor
+- **Stripe + Conekta** - Procesamiento de pagos
 
-### 📚 **Mantenimiento de README**
-- ✅ **Actualiza automáticamente** después de cada fase
-- ✅ **Marca features** como completadas
-- ✅ **Sincroniza** documentación con progreso real
-- ✅ **Mantiene** información técnica actualizada
+### DevOps & Tools
+- **pnpm** - Gestor de paquetes
+- **ESLint + Prettier** - Linting y formateo
+- **Dokploy** - Deployment
+- **MongoDB** - Base de datos
+- **Git** - Control de versiones
 
-## Cómo usar
+## 📁 Estructura del Proyecto
 
-### 1. Copia la carpeta `.CADD/` a tu proyecto
+```
+nimbo-pro/
+├── frontend/                 # Aplicación Next.js
+│   ├── src/
+│   │   ├── app/             # App Router pages
+│   │   │   ├── components/      # Componentes reutilizables
+│   │   │   ├── lib/             # Utilidades y configuraciones
+│   │   │   ├── hooks/           # Custom React hooks
+│   │   │   ├── types/           # Definiciones TypeScript
+│   │   │   └── utils/           # Funciones utilitarias
+│   │   ├── public/              # Assets estáticos
+│   │   └── styles/              # Estilos globales
+│   ├── backend/                 # API NestJS
+│   │   ├── src/
+│   │   │   ├── auth/            # Módulo de autenticación
+│   │   │   ├── users/           # Gestión de usuarios
+│   │   │   ├── content/         # Gestión de contenido
+│   │   │   ├── payments/        # Procesamiento de pagos
+│   │   │   ├── common/          # Recursos compartidos
+│   │   │   └── config/          # Configuraciones
+│   │   └── test/                # Tests unitarios e integración
+│   ├── .CADD/                   # Documentación metodología CADD
+│   ├── docs/                    # Documentación del proyecto
+│   └── scripts/                 # Scripts de automatización
+```
+
+## 🚦 Instalación y Configuración
+
+### Prerrequisitos
+- Node.js 18.0 o superior
+- pnpm 8.0 o superior
+- MongoDB 7.0 o superior
+
+### Instalación
+
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/tu-usuario/nimbo-pro.git
+   cd nimbo-pro
+   ```
+
+2. **Instalar dependencias**
+   ```bash
+   pnpm install
+   ```
+
+3. **Configurar variables de entorno**
+   ```bash
+   # Backend (.env)
+   cp backend/.env.example backend/.env
+   
+   # Frontend (.env.local)
+   cp frontend/.env.local.example frontend/.env.local
+   ```
+
+4. **Configurar MongoDB**
+   ```bash
+   # Iniciar MongoDB localmente
+   mongod --dbpath ./data/db
+   ```
+
+5. **Ejecutar en modo desarrollo**
+   ```bash
+   # Ambos servicios
+   pnpm dev
+   
+   # Solo frontend
+   pnpm dev:frontend
+   
+   # Solo backend
+   pnpm dev:backend
+   ```
+
+### URLs de Desarrollo
+- **Frontend**: http://localhost:3000
+- **Backend**: http://localhost:4000
+- **MongoDB**: mongodb://localhost:27017
+
+## 🧪 Testing
+
 ```bash
-cp -r .CADD/ /path/to/your/project/
+# Ejecutar todos los tests
+pnpm test
+
+# Tests con coverage
+pnpm test:coverage
+
+# Tests en modo watch
+pnpm test:watch
+
+# E2E tests
+pnpm test:e2e
 ```
 
-### 2. Personaliza tus preferencias
+## 🚀 Deployment
+
+### Staging
 ```bash
-# Edita con tus datos personales
-nano .CADD/PREFERENCES.md
+pnpm deploy:staging
 ```
 
-### 3. Inicia cualquier conversación con IA
-```
-Lee el archivo .CADD/START.md
-```
-
-### 4. ¡Nuevo! Configuración automática de Git
-Cuando el agente complete tu planificación inicial, te preguntará:
-- **¿Preparar repositorio Git?** → Genera automáticamente .gitignore y README
-- **¿Actualizar README?** → Sincroniza documentación después de cada fase
-
-## Beneficios
-
-- ✅ **Instrucciones claras** para agentes de IA
-- ✅ **Menos errores** por falta de contexto
-- ✅ **Proyectos organizados** desde el inicio
-- ✅ **Funciona para cualquier nivel técnico**
-- ✅ **Reutilizable** en múltiples proyectos
-- ✅ **Automatización Git** y documentación
-- ✅ **Mantenimiento** automático de README
-
-## Flujo de Trabajo
-
-```
-1. Planificación inicial → 2. ¿Preparar Git? → 3. Desarrollo estructurado
-                                ↓
-4. Avance de fases → 5. ¿Actualizar README? → 6. Documentación sincronizada
+### Production
+```bash
+pnpm deploy:production
 ```
 
-## Documentación
+### Variables de Entorno Requeridas
 
-Para guía completa, lee `.CADD/USER_GUIDE.md`
+```env
+# Base de datos
+DATABASE_URL=mongodb://localhost:27017/nimbropro
 
-## Versiones
+# Autenticación
+AUTH_SECRET=your-secret-key
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+GITHUB_CLIENT_ID=your-github-client-id
+GITHUB_CLIENT_SECRET=your-github-client-secret
+LINKEDIN_CLIENT_ID=your-linkedin-client-id
+LINKEDIN_CLIENT_SECRET=your-linkedin-client-secret
+FACEBOOK_CLIENT_ID=your-facebook-client-id
+FACEBOOK_CLIENT_SECRET=your-facebook-client-secret
 
-### **v1.1.0** - Automatización de Git y mantenimiento de README
-- Configuración automática de repositorio Git
-- Generación de .gitignore basado en stack tecnológico  
-- Creación de README.md desde PROJECT_PLAN.md
-- Actualización automática de documentación
-- Commits con mensajes descriptivos
+# Pagos
+STRIPE_SECRET_KEY=your-stripe-secret-key
+STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
+CONEKTA_SECRET_KEY=your-conekta-secret-key
+CONEKTA_WEBHOOK_SECRET=your-conekta-webhook-secret
 
-### **v1.0.0** - Metodología completa en inglés optimizada para LLMs
-- Archivos técnicos en inglés para mejor comprensión de agentes
-- Preferencias de usuario en idioma elegido
-- Reglas mejoradas para gestión de recordatorios
+# Email
+EMAIL_SERVICE_API_KEY=your-email-service-key
+```
+
+## 👥 Usuarios Objetivo
+
+### Programadores
+- Desarrolladores que buscan aprender metodologías de transformación digital
+- Profesionales interesados en AI-first development
+- Comunidad tech enfocada en innovación
+
+### Empresas (PYMES)
+- Pequeñas y medianas empresas
+- Necesidad de transformación digital
+- Búsqueda de acompañamiento especializado en AI
+
+## 🗺️ Roadmap
+
+### Phase 1: Core Infrastructure (4 semanas)
+- [x] Configuración inicial del proyecto
+- [ ] Sistema de autenticación multi-proveedor
+- [ ] Gestión básica de usuarios
+- [ ] Conexión a base de datos
+
+### Phase 2: User Management & Content (3 semanas)
+- [ ] Perfiles de usuario diferenciados
+- [ ] CMS para gestión de contenido
+- [ ] Sistema de contenido gratuito
+- [ ] Dashboards básicos
+
+### Phase 3: Payment System (2 semanas)
+- [ ] Integración con Stripe
+- [ ] Integración con Conekta
+- [ ] Planes de suscripción
+- [ ] Gestión de pagos
+
+### Phase 4: Advanced Features (3 semanas)
+- [ ] Funcionalidades avanzadas
+- [ ] Optimización de rendimiento
+- [ ] Analytics y métricas
+- [ ] Testing exhaustivo
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crear rama de feature (`git checkout -b feature/nueva-funcionalidad`)
+3. Commit cambios (`git commit -m 'Agregar nueva funcionalidad'`)
+4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Crear Pull Request
+
+### Estándares de Código
+- Usar TypeScript en modo strict
+- Seguir convenciones de ESLint/Prettier
+- Escribir tests para nuevas funcionalidades
+- Documentar APIs y componentes importantes
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 📞 Contacto
+
+**Nimbo Pro Team**
+- Email: info@nimbro-pro.com
+- Website: https://nimbro-pro.com
 
 ---
 
-**¡Listo para vibe coding productivo con IA!** 🚀 
+⚡ **Construido con Next.js, NestJS y MongoDB**  
+🚀 **Desplegado con Dokploy**  
+💙 **Hecho con amor para la transformación digital** 
