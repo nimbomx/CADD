@@ -93,14 +93,6 @@ The agent will automatically:
 4. Plans new functionalities
 5. Updates PROJECT_PLAN.md
 
-#### 🔄 For Existing Projects (NEW!)
-1. Agent reads START.md
-2. **Automatically detects** existing project files
-3. **Analyzes your codebase** (technology, features, structure)
-4. **Auto-generates** PROJECT_PLAN.md with detected information
-5. **Asks minimal questions** about business goals and next phase
-6. **Continues development** using CADD methodology
-
 ---
 
 ## Guide by Technical Level
@@ -170,65 +162,6 @@ The agent will automatically:
 
 ---
 
-## Using CADD with Existing Projects
-
-### 🔄 Plug & Play Integration
-**NEW FEATURE**: CADD can now automatically analyze and integrate with your existing projects!
-
-### How It Works
-1. **Drag and drop** the `.CADD/` folder into your existing project
-2. **Start conversation** with "Read the file .CADD/START.md"
-3. **Automatic analysis** happens in seconds
-4. **Minimal setup** - just answer 2-3 questions
-5. **Ready to continue** development with CADD methodology
-
-### What Gets Analyzed
-- **Technology Stack**: Frameworks, libraries, versions
-- **Project Structure**: Folders, files, organization
-- **Features**: Existing functionality from code analysis
-- **Architecture**: Patterns, database design, API style
-- **Code Quality**: Tests, linting, documentation
-- **Git History**: Activity, team size, release cadence
-
-### Example: Existing React App
-```
-User: "Read the file .CADD/START.md"
-Agent: "Existing project detected! Analyzing codebase..."
-       "✅ React 18 + TypeScript + Node.js detected"
-       "✅ Found 15 components, 8 API endpoints"
-       "✅ 78% test coverage, ESLint configured"
-       "✅ PROJECT_PLAN.md auto-generated"
-       
-       "Just need to clarify:"
-       "1. What's the main purpose of your app?"
-       "2. What do you want to develop next?"
-
-User: "It's a task manager. I want to add team collaboration features."
-Agent: "Perfect! I've set up your next development phase. Ready to create the first ticket?"
-```
-
-### Benefits for Existing Projects
-- **No Disruption**: Doesn't change your existing code or structure
-- **Smart Integration**: Learns from your existing patterns
-- **Instant Value**: Ready to use immediately
-- **Respects Your Work**: Preserves everything you've built
-
-### What You Keep
-- ✅ **All your existing code** (unchanged)
-- ✅ **Your folder structure** (preserved)
-- ✅ **Your Git history** (intact)
-- ✅ **Your build process** (continues working)
-- ✅ **Your team workflow** (enhanced, not replaced)
-
-### What You Get
-- ✅ **Structured development** with TKDD methodology
-- ✅ **Better project documentation** (auto-generated)
-- ✅ **Organized ticket system** for future development
-- ✅ **AI-friendly project context** for better assistance
-- ✅ **Phase-based development** planning
-
----
-
 ## Usage Examples
 
 ### Example 1: Simple E-commerce
@@ -250,27 +183,6 @@ User: "B - Continue current phase"
 Agent: "I see you're in Phase 2. You completed login. Shall we continue with the shopping cart?"
 ```
 
-### Example 3: Existing Project Integration (NEW!)
-```
-User: "Read the file .CADD/START.md"
-Agent: "Existing project detected! Analyzing codebase..."
-       "✅ Technology Stack: React 18, Node.js, PostgreSQL"
-       "✅ Features: Auth, CRUD, Dashboard (15 components)"
-       "✅ Quality: 82% test coverage, ESLint configured"
-       "✅ PROJECT_PLAN.md auto-generated"
-       
-       "Just need to clarify:"
-       "1. What's the main purpose of this application?"
-       "2. What do you want to develop in the next phase?"
-
-User: "1. It's a customer management system for small businesses"
-      "2. I want to add invoice generation and payment processing"
-
-Agent: "Perfect! I've updated your PROJECT_PLAN.md with this information."
-       "Your project is now set up with CADD methodology."
-       "Ready to create the first ticket for invoice generation?"
-```
-
 ---
 
 ## Tips and Best Practices
@@ -290,22 +202,6 @@ Agent: "Perfect! I've updated your PROJECT_PLAN.md with this information."
 - Don't leave PROJECT_PLAN.md empty for too long
 - Don't be afraid to ask questions
 
-### 🔄 For Existing Projects
-#### ✅ Do This
-- **Trust the auto-analysis** - it's usually very accurate
-- **Provide context** about business goals and next phase
-- **Review the generated PROJECT_PLAN.md** - correct if needed
-- **Start with simple tickets** to test the integration
-- **Gradually adopt** CADD methodology
-- **Keep your existing workflow** - CADD enhances, doesn't replace
-
-#### ❌ Avoid This
-- Don't worry about changing your existing code structure
-- Don't feel pressure to reorganize everything
-- Don't skip the clarification questions
-- Don't assume the analysis captured everything perfectly
-- Don't try to migrate everything at once
-
 ---
 
 ## Troubleshooting
@@ -323,20 +219,6 @@ Agent: "Perfect! I've updated your PROJECT_PLAN.md with this information."
 
 #### "The agent forgets what we were working on"
 **Solution:** Always start with "Read the file .CADD/START.md"
-
-### For Existing Projects
-
-#### "The agent didn't detect my project correctly"
-**Solution:** Check if you have package.json, requirements.txt, or other technology files in your project root
-
-#### "The auto-analysis missed important features"
-**Solution:** Review and edit the generated PROJECT_PLAN.md to add missing information
-
-#### "I don't want to change my existing structure"
-**Solution:** Perfect! CADD preserves your existing structure - it only adds `.CADD/` folder and `/tickets/`
-
-#### "The agent wants to reorganize my code"
-**Solution:** Remind the agent that this is an existing project and to preserve the current structure
 
 ---
 
