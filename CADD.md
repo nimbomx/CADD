@@ -42,36 +42,50 @@ flowchart TD
     F --> I
     G --> I
     
-    I --> J[Ejecutar plan usando TKDD]
+    I --> J{¿Frontend + Backend?}
+    J -->|Sí| K[Sugerir Turborepo]
+    J -->|No| L[Plan estándar]
+    K --> L
+    L --> M[Ejecutar plan usando TKDD]
     
-    D --> K{¿Preparar repositorio Git?}
-    K -->|Sí| L[Generar .gitignore y README]
-    K -->|No| J
-    L --> M[Inicializar Git]
-    M --> J
+    D --> N{¿Preparar repositorio Git?}
+    N -->|Sí| O[Generar .gitignore y README]
+    N -->|No| M
+    O --> P[Inicializar Git]
+    P --> M
     
-    F --> N{¿Actualizar README?}
-    N -->|Sí| O[Actualizar features completadas]
-    N -->|No| P[Continuar desarrollo]
-    O --> P
+    F --> Q{¿Actualizar README?}
+    Q -->|Sí| R[Actualizar features completadas]
+    Q -->|No| S[Continuar desarrollo]
+    R --> S
     
-    J --> Q[Actualizar PROJECT_PLAN.md]
-    Q --> P
+    M --> T[Actualizar PROJECT_PLAN.md]
+    T --> S
 ```
 
-## Nuevas Funcionalidades v1.1.0
+## Nuevas Funcionalidades v1.2.0
 
-### 🔧 **Configuración Automática de Git**
-- **Genera .gitignore** basado en tu stack tecnológico
-- **Crea README.md** completo desde PROJECT_PLAN.md
-- **Inicializa repositorio** con commit inicial
-- **Sugiere** configuración de repositorio remoto
+### 🏗️ **Sugerencia Inteligente de Turborepo**
+- **Detecta** cuando planificas frontend + backend
+- **Sugiere Turborepo** con beneficios claros:
+  - ✅ Código compartido entre apps
+  - ✅ Builds optimizados con caching
+  - ✅ Workflows paralelos
+  - ✅ Mejor gestión de dependencias
+- **Integra** automáticamente en .gitignore y README
+
+### 🔧 **Gestión Mejorada de Preferencias**
+- **Informa** que puedes cambiar preferencias cuando quieras
+- **Manejo inteligente** de rechazo de configuración
+- **No vuelve a preguntar** si rechazas la configuración
+- **Ayuda disponible** solo cuando la solicites
 
 ### 📚 **Mantenimiento de README**
 - **Actualiza automáticamente** después de cada fase
 - **Marca features** como ✅ completadas
 - **Sincroniza** documentación con progreso real
 - **Mantiene** información técnica actualizada
+- **Soporte para Turborepo** con instrucciones específicas
 
 ## Beneficios
 
@@ -81,15 +95,17 @@ flowchart TD
 - **🤖 AI-optimizado** - Diseñado específicamente para agentes de IA
 - **⚡ Productivo** - Menos tiempo explicando, más tiempo programando
 - **🔧 Automatizado** - Configuración de Git y documentación automática
+- **🏗️ Monorepo-ready** - Sugerencias inteligentes para arquitectura
 
 ## Flujo de Trabajo Extendido
 
 ### 🚀 **Nuevo Proyecto**
 1. Planificación inicial
-2. Generación de tickets TKDD
-3. **¿Preparar Git?** → Genera .gitignore y README
-4. Inicialización automática del repositorio
-5. Desarrollo con seguimiento estructurado
+2. **¿Frontend + Backend?** → Sugerencia de Turborepo
+3. Generación de tickets TKDD
+4. **¿Preparar Git?** → Genera .gitignore y README
+5. Inicialización automática del repositorio
+6. Desarrollo con seguimiento estructurado
 
 ### 📋 **Avance de Fases**
 1. Revisión de progreso
@@ -98,7 +114,27 @@ flowchart TD
 4. **¿Actualizar README?** → Sincronización automática
 5. Commit de cambios en documentación
 
+### ⚙️ **Gestión de Preferencias**
+1. Configuración opcional en primera sesión
+2. **"Puedes cambiar tus preferencias cuando quieras"**
+3. Si rechazas: **"Solo pídeme ayuda cuando quieras. No volveré a preguntar"**
+4. Ayuda disponible bajo demanda
+
 ## Versiones
+
+- **v1.2.0** - Sugerencia de Turborepo y gestión mejorada de preferencias
+  - Sugerencia inteligente de Turborepo para proyectos fullstack
+  - Gestión mejorada de preferencias con opciones flexibles
+  - Manejo educado del rechazo de configuración
+  - Integración completa de Turborepo en templates
+  - Mejor experiencia de usuario en configuración inicial
+
+- **v1.1.1** - Fix agent communication and preferences detection
+  - Comunicación directa y concisa
+  - Eliminación de falsos positivos en preferencias
+  - PREFERENCES.md convertido a inglés
+  - Referencia a USER_GUIDE.md
+  - Reglas de comunicación mejoradas
 
 - **v1.1.0** - Automatización de Git y mantenimiento de README
   - Configuración automática de repositorio Git
