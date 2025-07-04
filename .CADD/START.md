@@ -48,6 +48,8 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 3. If has content: Analyze and complement it
 4. Create initial development plan
 5. Generate first TKDD ticket
+6. **ASK**: "Do you want to prepare this project for a Git repository?"
+7. **IF YES**: Execute Git Repository Setup (see section below)
 
 #### B) Continue Current Phase
 1. Read PROJECT_PLAN.md
@@ -61,6 +63,8 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 3. Present summary of completed work
 4. Start next phase of plan
 5. Generate tickets for new phase
+6. **ASK**: "Do you want to update the README.md with the new features completed?"
+7. **IF YES**: Execute README Update (see section below)
 
 #### D) Plan New Version
 1. Read PROJECT_PLAN.md
@@ -74,6 +78,113 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 2. Ask what they want to change/add
 3. Update PREFERENCES.md with new preferences
 4. Confirm changes applied
+
+---
+
+## Git Repository Setup
+
+### When to Execute
+- After completing initial project planning (option A)
+- User confirms they want Git repository setup
+
+### Actions to Perform
+1. **Generate .gitignore**:
+   - Based on technology stack from PROJECT_PLAN.md
+   - Include specific patterns for the project type
+   - Add common patterns for development tools
+
+2. **Generate README.md**:
+   - Use project name from PROJECT_PLAN.md
+   - Include main objective and description
+   - Add technology stack information
+   - Include installation and usage instructions
+   - Add project structure if applicable
+   - Include any important notes from PROJECT_PLAN.md
+
+3. **Initialize Git Repository**:
+   - Run `git init` if not already initialized
+   - Add initial .gitignore and README.md
+   - Create initial commit with meaningful message
+   - Suggest next steps for remote repository setup
+
+### .gitignore Template Generation
+Base the .gitignore on the technology stack:
+
+- **Node.js/React/Vue/Angular**: Include node_modules, .env, dist, build
+- **Python**: Include __pycache__, .env, venv, *.pyc
+- **Java**: Include target/, .class, .jar
+- **C#/.NET**: Include bin/, obj/, *.user
+- **Go**: Include vendor/, *.exe
+- **Ruby**: Include .bundle, vendor/bundle
+- **PHP**: Include vendor/, .env
+- **General**: Include IDE files, OS files, logs
+
+### README.md Template Generation
+Structure the README based on PROJECT_PLAN.md:
+
+```markdown
+# [Project Name]
+
+[Main Objective from PROJECT_PLAN.md]
+
+## Features
+
+[List main features from PROJECT_PLAN.md]
+
+## Technology Stack
+
+[List technologies from PROJECT_PLAN.md]
+
+## Installation
+
+[Generate installation instructions based on stack]
+
+## Usage
+
+[Basic usage instructions]
+
+## Project Structure
+
+[If applicable, show main folders]
+
+## Contributing
+
+[If applicable, contribution guidelines]
+
+## License
+
+[If specified in PROJECT_PLAN.md]
+```
+
+---
+
+## README Update Process
+
+### When to Execute
+- After completing a project phase (option C)
+- User confirms they want README updated
+
+### Actions to Perform
+1. **Review Current README.md**:
+   - Read existing content
+   - Identify sections that need updates
+
+2. **Update Features Section**:
+   - Add newly completed features
+   - Mark completed features as "✅ Completed"
+   - Update any feature descriptions
+
+3. **Update Version Information**:
+   - Update version number if applicable
+   - Add changelog entry if present
+
+4. **Update Installation/Usage**:
+   - Update if new dependencies were added
+   - Update if usage instructions changed
+
+5. **Commit Changes**:
+   - Add and commit README updates
+   - Use meaningful commit message
 
 ---
 
@@ -102,6 +213,19 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 - **CONFIRM** with user before saving important rules
 - **WRITE IN ENGLISH** when user asks to remember a rule, regardless of instruction language
 - **EVALUATE** if context or intention is lost in English translation, keep original language if needed
+
+### Git Repository Management
+- **ALWAYS ASK** before initializing Git repository
+- **GENERATE** .gitignore based on PROJECT_PLAN.md technology stack
+- **CREATE** comprehensive README.md from PROJECT_PLAN.md information
+- **USE** meaningful commit messages
+- **SUGGEST** remote repository setup after local initialization
+
+### README Maintenance
+- **ALWAYS ASK** before updating README after phase completion
+- **KEEP** README synchronized with project progress
+- **UPDATE** feature status and descriptions
+- **MAINTAIN** clear and helpful documentation
 
 ### To Complete Empty PROJECT_PLAN.md
 If PROJECT_PLAN.md is empty, ask IN ORDER:
