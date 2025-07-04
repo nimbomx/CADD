@@ -1,0 +1,69 @@
+{
+  "name": "nimbo-pro",
+  "version": "0.1.0",
+  "description": "Portal de transformación digital con AI - Nimbo Pro",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"pnpm dev:frontend\" \"pnpm dev:backend\"",
+    "dev:frontend": "cd frontend && pnpm dev",
+    "dev:backend": "cd backend && pnpm dev",
+    "build": "pnpm build:frontend && pnpm build:backend",
+    "build:frontend": "cd frontend && pnpm build",
+    "build:backend": "cd backend && pnpm build",
+    "start": "concurrently \"pnpm start:frontend\" \"pnpm start:backend\"",
+    "start:frontend": "cd frontend && pnpm start",
+    "start:backend": "cd backend && pnpm start",
+    "test": "pnpm test:frontend && pnpm test:backend",
+    "test:frontend": "cd frontend && pnpm test",
+    "test:backend": "cd backend && pnpm test",
+    "test:coverage": "pnpm test:coverage:frontend && pnpm test:coverage:backend",
+    "test:coverage:frontend": "cd frontend && pnpm test:coverage",
+    "test:coverage:backend": "cd backend && pnpm test:coverage",
+    "lint": "pnpm lint:frontend && pnpm lint:backend",
+    "lint:frontend": "cd frontend && pnpm lint",
+    "lint:backend": "cd backend && pnpm lint",
+    "lint:fix": "pnpm lint:fix:frontend && pnpm lint:fix:backend",
+    "lint:fix:frontend": "cd frontend && pnpm lint:fix",
+    "lint:fix:backend": "cd backend && pnpm lint:fix",
+    "format": "prettier --write .",
+    "clean": "rm -rf node_modules frontend/node_modules backend/node_modules frontend/.next frontend/dist backend/dist",
+    "postinstall": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "concurrently": "^8.2.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.15.0",
+  "keywords": [
+    "ai",
+    "transformation",
+    "digital",
+    "saas",
+    "nextjs",
+    "nestjs",
+    "mongodb",
+    "typescript"
+  ],
+  "author": "Nimbo Pro Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nimbo-pro/nimbo-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nimbo-pro/nimbo-pro/issues"
+  },
+  "homepage": "https://github.com/nimbo-pro/nimbo-pro#readme"
+} 
