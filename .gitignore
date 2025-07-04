@@ -168,3 +168,6 @@ public/uploads/
 # Cache directories
 .cache/
 .temp/ 
+temp/ 
+
+dev_notes/

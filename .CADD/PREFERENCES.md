@@ -1,10 +1,12 @@
-# PREFERENCES.md - Preferencias del Usuario
+# USER PREFERENCES
 
-> **Este archivo contiene las preferencias personales del usuario. El agente debe leerlo SIEMPRE y aplicar estas preferencias en toda la conversación.**
+> **For User:** Fill out your personal preferences. Leave empty what you don't want to specify.
+
+> **For Agent:** Apply these preferences consistently throughout the conversation. If empty, use neutral defaults.
 
 ---
 
-## 👤 Información Personal
+## Personal Information
 
 ### Nombre
 **Ernesto** - Cómo prefieres que te llamen
@@ -16,7 +18,7 @@
 
 ---
 
-## 🛠️ Preferencias Técnicas
+## Technical Preferences
 
 ### Herramientas Obligatorias
 - **pnpm** - Gestor de paquetes
@@ -36,7 +38,7 @@
 
 ---
 
-## 📋 Preferencias de Metodología
+## Code Style
 
 ### Formato de Tickets
 - **TKDD** - Usar siempre formato Ticket-Driven Development
@@ -55,7 +57,7 @@
 
 ---
 
-## 🎯 Objetivos y Valores
+## Workflow Preferences
 
 ### Prioridades
 1. **Mantenibilidad** - Código fácil de mantener y modificar
@@ -74,7 +76,7 @@
 
 ---
 
-## 📝 Notas Especiales
+## Restrictions and Limitations
 
 ### Contexto Personal
 - **Avanzado** - Nivel técnico
@@ -93,7 +95,7 @@
 
 ---
 
-## 🔄 Historial de Cambios
+## Additional Notes
 
 ### 2024-12-19 - Configuración inicial
 - **Nombre**: Ernesto
@@ -113,31 +115,42 @@
 
 ---
 
-## 📋 Ejemplo de Configuración
+## Git Security Settings (IMPORTANT)
 
-```markdown
-## 👤 Información Personal
-### Nombre
-**Ana** - Siempre llamarme así
+### Default Git Behavior
+- **ALWAYS ASK** before making commits (security first)
+- **SHOW FILES** to be committed before proceeding
+- **RESPECT** user's decision on Git management
 
-### Estilo de Comunicación
-- **Respuestas concisas** y directas
-- **Informal** pero profesional
-- **Hacer preguntas** cuando algo no esté claro
+### Git Automation Options
+1. **"always-ask"** (DEFAULT) - Always ask before any Git operation
+2. **"auto-with-permission"** - Ask once, then automate if user agrees
+3. **"never-auto"** - Never automate Git operations, user handles manually
 
-## 🛠️ Preferencias Técnicas
-### Herramientas Obligatorias
-- **pnpm** - Siempre usar para gestión de paquetes
-- **Español** - Siempre responder en español
-- **VS Code** - Editor preferido
-
-### Tecnologías Preferidas
-- Frontend: React, TypeScript
-- Backend: Node.js, Express
-- Base de datos: PostgreSQL
-- Deployment: Vercel
-```
+### Security Notes
+- Users may have sensitive files or notes that shouldn't be committed
+- Always review files before adding to Git
+- Respect user's Git workflow preferences
+- Never assume files are safe to commit publicly
 
 ---
 
-> **Para el agente**: Este archivo es tu guía sobre cómo interactuar con el usuario. Léelo SIEMPRE al inicio de cada conversación y aplica estas preferencias consistentemente. 
+## Instructions for Agent
+
+### Reading Preferences
+- **"[Not configured]"** means the preference is not set
+- **Don't assume** examples are real preferences
+- **Only apply** explicitly configured values
+- **Offer setup** if most preferences are unconfigured
+
+### Updating Preferences
+- **ASK** what user wants to change/add
+- **CONFIRM** changes before applying
+- **RESPECT** user's workflow choices
+- **MAINTAIN** this structured format
+
+### Git Preferences
+- **ALWAYS CHECK** Git automation settings before committing
+- **DEFAULT** to asking user about commits
+- **RESPECT** user's security concerns
+- **NEVER** commit without explicit permission unless configured otherwise 
