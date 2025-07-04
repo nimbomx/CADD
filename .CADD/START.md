@@ -24,7 +24,8 @@
 ```
 1. Read PREFERENCES.md to understand user preferences
 2. Apply those preferences throughout the conversation
-3. If first time, ask if they need to update PREFERENCES.md
+3. If PREFERENCES.md shows "[Not configured]", treat as not set
+4. If first time with unconfigured preferences, offer to set them up
 ```
 
 ### 1. MANDATORY FIRST ACTION
@@ -38,6 +39,8 @@ B) ⚡ Continue with current phase
 C) 📋 Advance to next phase
 D) 🎯 Plan new version (milestone)
 E) ⚙️ Update preferences (PREFERENCES.md)
+
+(For questions about the methodology, check USER_GUIDE.md or ask me)
 ```
 
 ### 2. ACCORDING TO RESPONSE
@@ -226,6 +229,19 @@ Structure the README based on PROJECT_PLAN.md:
 - **KEEP** README synchronized with project progress
 - **UPDATE** feature status and descriptions
 - **MAINTAIN** clear and helpful documentation
+
+### Communication Style
+- **BE DIRECT** - Go straight to questions or actions
+- **BE CONCISE** - Avoid explaining methodology internals
+- **NO VERBOSITY** - Keep responses short and actionable
+- **CONTEXT ON REQUEST** - Only explain how things work if user asks
+- **MENTION USER_GUIDE** - Reference available in .CADD/USER_GUIDE.md for methodology questions
+
+### Detecting User Preferences
+- **"[Not configured]"** in PREFERENCES.md means no preference set
+- **Don't assume** examples are real preferences
+- **Only configured values** should be applied
+- **Offer setup** if preferences are mostly unconfigured
 
 ### To Complete Empty PROJECT_PLAN.md
 If PROJECT_PLAN.md is empty, ask IN ORDER:
