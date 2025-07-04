@@ -43,9 +43,35 @@ flowchart TD
     G --> I
     
     I --> J[Ejecutar plan usando TKDD]
-    J --> K[Actualizar PROJECT_PLAN.md]
-    K --> L[Continuar desarrollo]
+    
+    D --> K{¿Preparar repositorio Git?}
+    K -->|Sí| L[Generar .gitignore y README]
+    K -->|No| J
+    L --> M[Inicializar Git]
+    M --> J
+    
+    F --> N{¿Actualizar README?}
+    N -->|Sí| O[Actualizar features completadas]
+    N -->|No| P[Continuar desarrollo]
+    O --> P
+    
+    J --> Q[Actualizar PROJECT_PLAN.md]
+    Q --> P
 ```
+
+## Nuevas Funcionalidades v1.1.0
+
+### 🔧 **Configuración Automática de Git**
+- **Genera .gitignore** basado en tu stack tecnológico
+- **Crea README.md** completo desde PROJECT_PLAN.md
+- **Inicializa repositorio** con commit inicial
+- **Sugiere** configuración de repositorio remoto
+
+### 📚 **Mantenimiento de README**
+- **Actualiza automáticamente** después de cada fase
+- **Marca features** como ✅ completadas
+- **Sincroniza** documentación con progreso real
+- **Mantiene** información técnica actualizada
 
 ## Beneficios
 
@@ -54,13 +80,37 @@ flowchart TD
 - **📈 Escalable** - Desde principiante hasta experto
 - **🤖 AI-optimizado** - Diseñado específicamente para agentes de IA
 - **⚡ Productivo** - Menos tiempo explicando, más tiempo programando
+- **🔧 Automatizado** - Configuración de Git y documentación automática
+
+## Flujo de Trabajo Extendido
+
+### 🚀 **Nuevo Proyecto**
+1. Planificación inicial
+2. Generación de tickets TKDD
+3. **¿Preparar Git?** → Genera .gitignore y README
+4. Inicialización automática del repositorio
+5. Desarrollo con seguimiento estructurado
+
+### 📋 **Avance de Fases**
+1. Revisión de progreso
+2. Resumen de completado
+3. Generación de tickets siguientes
+4. **¿Actualizar README?** → Sincronización automática
+5. Commit de cambios en documentación
 
 ## Versiones
 
+- **v1.1.0** - Automatización de Git y mantenimiento de README
+  - Configuración automática de repositorio Git
+  - Generación de .gitignore basado en stack tecnológico
+  - Creación de README.md desde PROJECT_PLAN.md
+  - Actualización automática de documentación
+  - Commits con mensajes descriptivos
+
 - **v1.0.0** - Metodología completa en inglés optimizada para LLMs
-- Archivos técnicos en inglés para mejor comprensión de agentes
-- Preferencias de usuario en idioma elegido
-- Reglas mejoradas para gestión de recordatorios
+  - Archivos técnicos en inglés para mejor comprensión de agentes
+  - Preferencias de usuario en idioma elegido
+  - Reglas mejoradas para gestión de recordatorios
 
 ---
 
