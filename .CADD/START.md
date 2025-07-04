@@ -18,8 +18,29 @@
 
 ## Agent Workflow
 
-### 0. MANDATORY PRIOR ACTION
-**BEFORE** doing anything, read PREFERENCES.md:
+### 0. MANDATORY FIRST CHECK
+**BEFORE** doing anything, detect if this is an existing project:
+
+```
+1. SCAN current directory for existing project indicators:
+   - package.json, requirements.txt, composer.json, pom.xml
+   - src/, app/, components/, lib/, public/ folders
+   - .git/ repository
+   - README.md or other documentation
+   - Code files (.js, .ts, .py, .php, .java, .cs, .go, etc.)
+
+2. IF EXISTING PROJECT DETECTED:
+   - ANNOUNCE: "Existing project detected. Analyzing codebase..."
+   - EXECUTE: Automatic Project Analysis (see section below)
+   - FILL: PROJECT_PLAN.md with analyzed data
+   - ASK: Only for missing critical information
+   - CONTINUE: With normal workflow treating as next development phase
+
+3. IF NEW PROJECT: Continue with standard CADD workflow
+```
+
+### 0.1 MANDATORY PRIOR ACTION
+**AFTER** project detection, read PREFERENCES.md:
 
 ```
 1. Read PREFERENCES.md to understand user preferences
@@ -47,17 +68,19 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 ### 2. ACCORDING TO RESPONSE
 
 #### A) Create New Project
-1. Read PROJECT_PLAN.md
-2. If empty: Ask questions to fill it
-3. If has content: Analyze and complement it
-4. **CHECK**: If user mentions both frontend AND backend development
-5. **IF YES**: Suggest Turborepo for monorepo management (see Turborepo Suggestion section)
-6. Create initial development plan
-7. **CREATE**: Project organization structure (see Project Organization section)
-8. Generate first TKDD ticket in `/tickets` folder
-9. **ASK**: "Do you want to prepare this project for a Git repository?"
-10. **IF YES**: Execute Git Repository Setup (see section below)
-11. **IMPORTANT**: Always ask before making any Git commits (check Git Security Rules)
+1. **IF EXISTING PROJECT DETECTED**: Execute Automatic Project Analysis first
+2. Read PROJECT_PLAN.md
+3. If empty: Ask questions to fill it
+4. If auto-generated: Ask only for missing information (see Auto-Generated section)
+5. If has content: Analyze and complement it
+6. **CHECK**: If user mentions both frontend AND backend development
+7. **IF YES**: Suggest Turborepo for monorepo management (see Turborepo Suggestion section)
+8. Create initial development plan
+9. **CREATE**: Project organization structure (see Project Organization section)
+10. Generate first TKDD ticket in `/tickets` folder
+11. **ASK**: "Do you want to prepare this project for a Git repository?" (if not already exists)
+12. **IF YES**: Execute Git Repository Setup (see section below)
+13. **IMPORTANT**: Always ask before making any Git commits (check Git Security Rules)
 
 #### B) Continue Current Phase
 1. Read PROJECT_PLAN.md
@@ -129,6 +152,160 @@ project-root/
 
 ---
 
+## Automatic Project Analysis
+
+### When to Execute
+- When existing project is detected in step 0
+- Before any CADD workflow begins
+- To auto-fill PROJECT_PLAN.md with existing project data
+
+### Project Detection Indicators
+```
+Technology Files:
+- package.json (Node.js/JavaScript)
+- requirements.txt, setup.py (Python)
+- composer.json (PHP)
+- pom.xml, build.gradle (Java)
+- *.csproj, *.sln (C#/.NET)
+- go.mod (Go)
+- Cargo.toml (Rust)
+
+Project Folders:
+- src/, app/, components/, lib/, public/
+- frontend/, backend/, client/, server/
+- models/, views/, controllers/
+- utils/, helpers/, services/
+- tests/, spec/, __tests__/
+
+Repository Indicators:
+- .git/ folder
+- README.md, CHANGELOG.md
+- .gitignore, .env files
+- CI/CD files (.github/, .gitlab-ci.yml)
+```
+
+### Automatic Analysis Process
+1. **Technology Stack Detection**:
+   - Scan dependency files for frameworks and libraries
+   - Identify programming languages from file extensions
+   - Detect build tools and configuration files
+   - Analyze package managers and version requirements
+
+2. **Feature Analysis**:
+   - Scan route definitions for API endpoints
+   - Identify UI components and their purposes
+   - Detect authentication/authorization patterns
+   - Analyze database models and schemas
+   - Find CRUD operations and business logic
+
+3. **Project Structure Assessment**:
+   - Map folder purposes and architecture patterns
+   - Identify code organization conventions
+   - Analyze import/export patterns
+   - Detect state management solutions
+   - Assess testing frameworks and coverage
+
+4. **Quality and Status Evaluation**:
+   - Check for linting and formatting configurations
+   - Identify documentation patterns
+   - Analyze recent Git activity
+   - Assess security implementations
+   - Evaluate code complexity and maintainability
+
+### Auto-Fill PROJECT_PLAN.md Template
+```markdown
+# Project Plan - Auto-Generated Analysis
+
+## Project Information
+**Project Name**: [From package.json/folder name/README.md]
+**Main Objective**: [Inferred from README.md or ask user]
+**Target Audience**: [Inferred from UI/API structure or ask user]
+**Project Type**: [Web App/API/Mobile App/Desktop/Library/Other]
+**Current Version**: [From package.json/git tags/VERSION file]
+
+## Technology Stack (Auto-Detected)
+**Frontend**: [React 18.2, TypeScript, Tailwind CSS]
+**Backend**: [Node.js 18, Express 4.18, PostgreSQL]
+**Database**: [PostgreSQL 15, Prisma ORM]
+**Testing**: [Jest, React Testing Library, Supertest]
+**Build Tools**: [Vite, TypeScript, ESLint, Prettier]
+**Infrastructure**: [Docker, AWS/GCP/Azure if detected]
+
+## Current Features (Analyzed from Code)
+### Implemented ✅
+- User authentication (JWT-based)
+- User management (CRUD operations)
+- Dashboard with analytics
+- REST API with [X] endpoints
+- Responsive UI with [X] components
+- Database with [X] tables
+- Unit tests ([X]% coverage)
+- [Additional detected features]
+
+### Architecture Analysis
+**Pattern**: [MVC/Microservices/Monolithic/Layered]
+**State Management**: [Redux/Context API/Vuex/Pinia]
+**Database Design**: [Relational/NoSQL/Hybrid]
+**API Design**: [RESTful/GraphQL/RPC]
+**Authentication**: [JWT/OAuth/Session-based]
+
+## Code Quality Assessment
+**Testing**: [Framework used, coverage percentage]
+**Linting**: [ESLint/Pylint/etc. configuration detected]
+**Documentation**: [JSDoc/Sphinx/etc. usage]
+**Security**: [Security patterns implemented]
+**Performance**: [Optimization patterns detected]
+
+## Development Status
+**Last Activity**: [Git commit analysis]
+**Active Development**: [Based on recent commits]
+**Team Size**: [Inferred from commit authors]
+**Release Cadence**: [Inferred from git tags/releases]
+
+## Next Phase Planning (To be configured with user)
+**Phase**: [Auto-increment from detected version]
+**Focus Area**: [To be determined with user input]
+**Priority Features**: [To be determined with user input]
+**Estimated Timeline**: [To be determined with user input]
+**Success Criteria**: [To be determined with user input]
+
+## Migration Notes
+**Analysis Date**: [Current date]
+**CADD Integration**: [Existing project migrated to CADD methodology]
+**Preserved Structure**: [Existing folder structure maintained]
+**Compatibility**: [Notes about existing tools/processes]
+```
+
+### Missing Information Questions
+After auto-analysis, ask ONLY for information that couldn't be determined:
+
+```
+Required Information:
+1. **Main Objective**: "What is the main purpose of this application?"
+2. **Target Audience**: "Who are the primary users of this system?"
+3. **Next Phase Goals**: "What do you want to develop in the next phase?"
+
+Optional Clarifications:
+4. **Business Requirements**: "Are there any specific business rules or constraints?"
+5. **Technical Restrictions**: "Any technical limitations or requirements?"
+6. **Timeline Preferences**: "What's your preferred development timeline?"
+7. **Team Considerations**: "Any team-specific workflows to consider?"
+```
+
+### Integration with Existing Workflow
+- **Preserve existing structure**: Don't reorganize existing files
+- **Respect existing tools**: Integrate with current build/test/deploy processes
+- **Maintain compatibility**: Don't break existing workflows
+- **Add value**: Enhance existing processes with CADD methodology
+
+### Post-Analysis Actions
+1. **Create tickets folder**: Add `/tickets/` structure alongside existing folders
+2. **Generate first ticket**: Create TKDD ticket for next development phase
+3. **Update .gitignore**: Add CADD-specific patterns if needed
+4. **Integrate with Git**: Respect existing branch strategy and commit patterns
+
+---
+
 ## Turborepo Suggestion
 
 ### When to Suggest
@@ -174,6 +351,7 @@ Would you like me to include Turborepo in your technology stack?
    - Add common patterns for development tools
    - **IF TURBOREPO**: Include monorepo-specific patterns
    - **ALWAYS**: Include tickets organization patterns
+   - **IF EXISTING PROJECT**: Merge with existing .gitignore, don't replace
 
 2. **Generate README.md**:
    - Use project name from PROJECT_PLAN.md
@@ -290,13 +468,15 @@ tickets/           # TKDD tickets for development
 ## Important Rules
 
 ### For the Agent
-- **FIRST** read PREFERENCES.md for user preferences
+- **FIRST** detect if project exists, then read PREFERENCES.md for user preferences
+- **ANALYZE** existing projects automatically before any workflow
 - **NEVER** assume context without reading PROJECT_PLAN.md
 - **ALWAYS** use TKDD format for development tickets
 - **VALIDATE** each step before continuing
 - **ASK** if something is unclear in PROJECT_PLAN.md
 - **UPDATE** PROJECT_PLAN.md when there are important changes
 - **RESPECT** preferences in PREFERENCES.md at all times
+- **PRESERVE** existing project structure and workflows
 - **CRITICAL**: Always ask before making Git commits (security first)
 
 ### Critical User Interaction
@@ -393,8 +573,74 @@ If PROJECT_PLAN.md is empty, ask IN ORDER:
 5. **Are there technical restrictions?** (technologies, platforms)
 6. **What is the expected timeline?**
 
+### To Complete Auto-Generated PROJECT_PLAN.md (Existing Projects)
+If PROJECT_PLAN.md was auto-generated from existing project analysis, ask ONLY for missing information:
+
+1. **Main Objective**: "What is the main purpose of this application?" (if not clear from README/code)
+2. **Target Audience**: "Who are the primary users?" (if not determinable from UI/API)
+3. **Next Phase Goals**: "What do you want to develop in the next phase?" (always ask)
+4. **Business Requirements**: "Any specific business rules or constraints?" (optional)
+5. **Technical Restrictions**: "Any technical limitations?" (optional)
+6. **Timeline Preferences**: "What's your preferred timeline?" (optional)
+
 ### To Structure PROJECT_PLAN.md
 Use the standard PROJECT_PLAN.md template to organize it.
+
+### For Existing Projects - Auto-Generated Template
+When existing project is detected, use this enhanced template:
+
+```markdown
+# Project Plan - [Auto-Detected Project Name]
+
+## Project Information
+**Project Name**: [From package.json/folder name]
+**Main Objective**: [To be clarified with user]
+**Target Audience**: [To be clarified with user]
+**Project Type**: [Auto-detected: Web App/API/Mobile/etc.]
+**Current Version**: [Auto-detected from package.json/git tags]
+
+## Technology Stack (Auto-Detected)
+**Frontend**: [Detected technologies and versions]
+**Backend**: [Detected technologies and versions]
+**Database**: [Detected database and ORM]
+**Testing**: [Detected testing frameworks]
+**Build Tools**: [Detected build and dev tools]
+**Infrastructure**: [Detected deployment tools]
+
+## Current Features (Code Analysis)
+### Implemented ✅
+[List of auto-detected features based on code analysis]
+- Authentication system
+- User management
+- API endpoints
+- UI components
+- Database operations
+- [etc.]
+
+### Architecture Analysis
+**Pattern**: [Detected architectural pattern]
+**State Management**: [Detected state management solution]
+**API Design**: [Detected API style]
+**Database Design**: [Detected database approach]
+
+## Development Status
+**Last Activity**: [Git analysis results]
+**Code Quality**: [Testing, linting, documentation status]
+**Team Activity**: [Based on commit history]
+**Release History**: [Based on git tags/versions]
+
+## Next Phase Planning
+**Phase**: [To be determined with user]
+**Focus Area**: [To be determined with user]
+**Priority Features**: [To be determined with user]
+**Timeline**: [To be determined with user]
+
+## CADD Integration Notes
+**Migration Date**: [Current date]
+**Analysis Method**: Automatic code analysis
+**Preserved**: Existing project structure and workflows
+**Added**: CADD methodology and ticket organization
+```
 
 ### To Manage PREFERENCES.md
 - **Read PREFERENCES.md** at the beginning of each conversation
@@ -412,6 +658,13 @@ Use the standard PROJECT_PLAN.md template to organize it.
 - No code files
 - No development history
 - No `/tickets` folder
+
+### Existing Project (Auto-Detected)
+- Existing code files detected
+- Technology stack identifiable
+- Project structure already established
+- May have existing version control
+- PROJECT_PLAN.md auto-generated from analysis
 
 ### Project in Development
 - PROJECT_PLAN.md complete
