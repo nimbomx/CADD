@@ -53,14 +53,15 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 4. **CHECK**: If user mentions both frontend AND backend development
 5. **IF YES**: Suggest Turborepo for monorepo management (see Turborepo Suggestion section)
 6. Create initial development plan
-7. Generate first TKDD ticket
-8. **ASK**: "Do you want to prepare this project for a Git repository?"
-9. **IF YES**: Execute Git Repository Setup (see section below)
+7. **CREATE**: Project organization structure (see Project Organization section)
+8. Generate first TKDD ticket in `/tickets` folder
+9. **ASK**: "Do you want to prepare this project for a Git repository?"
+10. **IF YES**: Execute Git Repository Setup (see section below)
 
 #### B) Continue Current Phase
 1. Read PROJECT_PLAN.md
 2. Identify current phase and progress
-3. Review pending tickets
+3. Review pending tickets in `/tickets` folder
 4. Continue with next ticket/task
 
 #### C) Advance to Next Phase
@@ -68,7 +69,7 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 2. Confirm current phase completion
 3. Present summary of completed work
 4. Start next phase of plan
-5. Generate tickets for new phase
+5. Generate tickets for new phase in `/tickets` folder
 6. **ASK**: "Do you want to update the README.md with the new features completed?"
 7. **IF YES**: Execute README Update (see section below)
 
@@ -85,6 +86,45 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 3. Update PREFERENCES.md with new preferences
 4. Confirm changes applied
 5. **MENTION**: "You can always change your preferences by asking me to update them."
+
+---
+
+## Project Organization
+
+### When to Execute
+- During initial project setup (option A)
+- Before generating first tickets
+- If `/tickets` folder doesn't exist
+
+### Folder Structure to Create
+```
+project-root/
+├── .CADD/                    # CADD methodology files
+├── tickets/                  # TKDD tickets
+│   ├── backlog/             # Future tickets
+│   ├── in-progress/         # Current work
+│   ├── completed/           # Finished tickets
+│   └── archived/            # Old tickets
+├── docs/                    # Project documentation (optional)
+└── [project files...]
+```
+
+### Actions to Perform
+1. **Create `/tickets` folder** if it doesn't exist
+2. **Create subfolders**: backlog/, in-progress/, completed/, archived/
+3. **Create `/tickets/README.md`** with ticket management guidelines
+4. **Mention structure** to user: "I've organized your tickets in `/tickets` folder with subfolders for different stages."
+
+### Ticket File Naming Convention
+- **Format**: `TKDD-[YYYYMMDD]-[sequence]-[short-description].md`
+- **Example**: `TKDD-20241204-001-user-authentication.md`
+- **Location**: Start in `/tickets/backlog/`, move through workflow
+
+### Ticket Workflow
+1. **New tickets** → `/tickets/backlog/`
+2. **Start work** → Move to `/tickets/in-progress/`
+3. **Complete work** → Move to `/tickets/completed/`
+4. **Archive old** → Move to `/tickets/archived/` (after 30 days)
 
 ---
 
@@ -132,6 +172,7 @@ Would you like me to include Turborepo in your technology stack?
    - Include specific patterns for the project type
    - Add common patterns for development tools
    - **IF TURBOREPO**: Include monorepo-specific patterns
+   - **ALWAYS**: Include tickets organization patterns
 
 2. **Generate README.md**:
    - Use project name from PROJECT_PLAN.md
@@ -141,6 +182,7 @@ Would you like me to include Turborepo in your technology stack?
    - Add project structure if applicable
    - Include any important notes from PROJECT_PLAN.md
    - **IF TURBOREPO**: Include monorepo setup instructions
+   - **ALWAYS**: Include tickets folder explanation
 
 3. **Initialize Git Repository**:
    - Run `git init` if not already initialized
@@ -159,6 +201,7 @@ Base the .gitignore on the technology stack:
 - **Ruby**: Include .bundle, vendor/bundle
 - **PHP**: Include vendor/, .env
 - **Turborepo**: Include .turbo, apps/**/dist, packages/**/dist
+- **Tickets**: Include tickets/in-progress/, tickets/completed/ (keep backlog in repo)
 - **General**: Include IDE files, OS files, logs
 
 ### README.md Template Generation
@@ -191,6 +234,13 @@ Structure the README based on PROJECT_PLAN.md:
 
 [If applicable, show main folders]
 [IF TURBOREPO: Show apps/ and packages/ structure]
+```
+tickets/           # TKDD tickets for development
+├── backlog/       # Future work
+├── in-progress/   # Current tasks
+├── completed/     # Finished work
+└── archived/      # Old tickets
+```
 
 ## Contributing
 
@@ -299,6 +349,15 @@ Structure the README based on PROJECT_PLAN.md:
 - **INTEGRATE** into .gitignore and README if accepted
 - **INCLUDE** monorepo structure in project planning
 
+### Ticket Organization and Management
+- **ALWAYS** create `/tickets` folder structure for new projects
+- **ORGANIZE** tickets by workflow stage: backlog → in-progress → completed → archived
+- **USE** consistent naming convention: TKDD-[YYYYMMDD]-[sequence]-[description].md
+- **CREATE** tickets in `/tickets/backlog/` by default
+- **MOVE** tickets through workflow as work progresses
+- **EXPLAIN** organization to user when creating first tickets
+- **INCLUDE** tickets structure in .gitignore and README templates
+
 ### To Complete Empty PROJECT_PLAN.md
 If PROJECT_PLAN.md is empty, ask IN ORDER:
 
@@ -327,16 +386,19 @@ Use the standard PROJECT_PLAN.md template to organize it.
 - PROJECT_PLAN.md empty or incomplete
 - No code files
 - No development history
+- No `/tickets` folder
 
 ### Project in Development
 - PROJECT_PLAN.md complete
 - Existing code files
 - Defined phases with progress
+- `/tickets` folder with organized tickets
 
 ### Mature Project
 - PROJECT_PLAN.md with versions
 - Functional deployed code
 - Release history
+- Extensive ticket history in `/tickets/completed/` and `/tickets/archived/`
 
 ---
 
