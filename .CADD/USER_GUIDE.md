@@ -241,4 +241,49 @@ Agent: "I see you're in Phase 2. You completed login. Shall we continue with the
 
 ---
 
+## Git Repository Handling
+
+### For Existing Projects with Git
+When you add CADD to an existing project that already has a Git repository, CADD will:
+
+1. **Detect your existing repository** automatically
+2. **Show you the current remote** (if any)
+3. **Offer three options**:
+   - **Keep existing repository** (recommended)
+   - **Create new independent repository**
+   - **Skip Git setup entirely**
+
+### Option Details
+
+#### Keep Existing Repository ✅ (Recommended)
+- **Preserves**: All Git history, branches, remotes, tags
+- **Adds**: Only CADD-specific patterns to .gitignore
+- **Updates**: README.md with CADD section (preserves existing content)
+- **Safe**: No risk of losing any existing work
+
+#### Create New Repository ⚠️
+- **Warning**: Disconnects from current remote repository
+- **Removes**: All Git history and remote connections
+- **Creates**: Fresh repository starting from current state
+- **Use case**: When you want to completely break away from original repository
+
+#### Skip Git Setup 🚫
+- **No Git operations**: CADD doesn't touch Git at all
+- **Manual control**: You handle all Git operations yourself
+- **Files created**: Only .gitignore and README updates (no Git commands)
+
+### What's Safe
+- ✅ **Your code**: Never modified or reorganized
+- ✅ **Your Git history**: Preserved unless you choose "Create new"
+- ✅ **Your remotes**: Kept intact with "Keep existing" option
+- ✅ **Your branches**: All branches preserved
+- ✅ **Your workflow**: Enhanced, not replaced
+
+### Best Practices
+- **For existing projects**: Always choose "Keep existing repository"
+- **For templates/starters**: Consider "Create new repository"
+- **For experiments**: Use "Skip Git setup" for full control
+
+---
+
 **Remember: CADD is a tool to help you be more productive with AI agents. The more you use it, the better your results will be.** 

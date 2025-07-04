@@ -48,7 +48,7 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 3. If has content: Analyze and complement it
 4. Create initial development plan
 5. Generate first TKDD ticket
-6. **ASK**: "Do you want to prepare this project for a Git repository?"
+6. **ASK**: "Do you want to set up Git repository?" (detect existing first, then offer appropriate options)
 7. **IF YES**: Execute Git Repository Setup (see section below)
 
 #### B) Continue Current Phase
@@ -88,39 +88,78 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 - User confirms they want Git repository setup
 
 ### Actions to Perform
-1. **Generate .gitignore**:
-   - Based on technology stack from PROJECT_PLAN.md
-   - Include specific patterns for the project type
-   - Add common patterns for development tools
+1. **Detect Existing Git Repository**:
+   - Check if .git/ folder exists
+   - Analyze current Git status and remotes
+   - Determine repository setup strategy
 
-2. **Generate README.md**:
-   - Use project name from PROJECT_PLAN.md
-   - Include main objective and description
-   - Add technology stack information
-   - Include installation and usage instructions
-   - Add project structure if applicable
-   - Include any important notes from PROJECT_PLAN.md
+2. **Repository Setup Options**:
+   Ask user to choose:
+   - **Option A**: Keep existing repository (recommended for existing projects)
+   - **Option B**: Create new independent repository
+   - **Option C**: Skip Git setup entirely
 
-3. **Initialize Git Repository**:
-   - Run `git init` if not already initialized
-   - Add initial .gitignore and README.md
-   - Create initial commit with meaningful message
-   - Suggest next steps for remote repository setup
+3. **If Keep Existing Repository (Option A)**:
+   - **Merge .gitignore**: Add CADD patterns to existing .gitignore file
+   - **Update README.md**: Enhance existing README with CADD methodology section
+   - **Preserve Git History**: Keep all existing commits, branches, and remotes
+   - **Add CADD Files**: Stage .CADD/ folder and tickets/ structure
+   - **ASK USER**: "Do you want me to commit these CADD additions?" (show files to be committed)
+   - **IF YES**: Create commit with meaningful message about CADD integration
+   - **IF NO**: Leave files staged for user to commit manually
+
+4. **If Create New Repository (Option B)**:
+   - **WARNING**: Explain this will disconnect from original repository
+   - **ASK CONFIRMATION**: "This will remove connection to [remote-url]. All Git history will be lost. Continue?"
+   - **IF YES**: 
+     - Remove .git/ folder completely
+     - Generate fresh .gitignore based on PROJECT_PLAN.md technology stack
+     - Generate comprehensive README.md from PROJECT_PLAN.md
+     - Run `git init` to create new repository
+     - **ASK USER**: "Do you want me to make the initial commit?" (show files)
+     - **IF YES**: Create initial commit with all project files
+     - **IF NO**: Leave files untracked for user to commit manually
+   - **IF NO**: Return to Option A or C
+
+5. **If Skip Git Setup (Option C)**:
+   - **Generate .gitignore**: Create .gitignore file without Git operations
+   - **Generate README.md**: Create or update README without Git
+   - **Leave Git Management**: Entirely to user's discretion
+   - **Note**: User can run Git setup later if desired
 
 ### .gitignore Template Generation
-Base the .gitignore on the technology stack:
 
-- **Node.js/React/Vue/Angular**: Include node_modules, .env, dist, build
-- **Python**: Include __pycache__, .env, venv, *.pyc
-- **Java**: Include target/, .class, .jar
-- **C#/.NET**: Include bin/, obj/, *.user
-- **Go**: Include vendor/, *.exe
-- **Ruby**: Include .bundle, vendor/bundle
-- **PHP**: Include vendor/, .env
-- **General**: Include IDE files, OS files, logs
+#### For New Repository (Option B)
+Create complete .gitignore based on technology stack:
+- **Node.js/React/Vue/Angular**: node_modules, .env, dist, build, .next, .nuxt
+- **Python**: __pycache__, .env, venv, *.pyc, .pytest_cache, .coverage
+- **Java**: target/, .class, .jar, .gradle, build/
+- **C#/.NET**: bin/, obj/, *.user, .vs/, *.suo
+- **Go**: vendor/, *.exe, .env
+- **Ruby**: .bundle, vendor/bundle, .env
+- **PHP**: vendor/, .env, .phpunit.result.cache
+- **Turborepo**: .turbo, apps/**/dist, packages/**/dist
+- **CADD**: tickets/in-progress/, tickets/completed/
+- **General**: .DS_Store, Thumbs.db, *.log, .vscode/, .idea/
+
+#### For Existing Repository (Option A)
+Merge CADD-specific patterns with existing .gitignore:
+```
+# CADD Methodology
+tickets/in-progress/
+tickets/completed/
+# Keep tickets/backlog/ and tickets/archived/ in repository
+
+# IDE and OS (if not already present)
+.DS_Store
+Thumbs.db
+*.log
+```
 
 ### README.md Template Generation
-Structure the README based on PROJECT_PLAN.md:
+
+#### For New Repository (Option B)
+Create comprehensive README from PROJECT_PLAN.md:
 
 ```markdown
 # [Project Name]
@@ -146,6 +185,21 @@ Structure the README based on PROJECT_PLAN.md:
 ## Project Structure
 
 [If applicable, show main folders]
+```
+tickets/           # CADD tickets for development
+├── backlog/       # Future work
+├── in-progress/   # Current tasks
+├── completed/     # Finished work
+└── archived/      # Old tickets
+```
+
+## Development with CADD
+
+This project uses CADD (Context-Assisted Development Driven) methodology for AI-assisted development.
+
+To continue development:
+1. Start any conversation with: "Read the file .CADD/START.md"
+2. Follow the agent's guidance for structured development
 
 ## Contributing
 
@@ -154,6 +208,32 @@ Structure the README based on PROJECT_PLAN.md:
 ## License
 
 [If specified in PROJECT_PLAN.md]
+```
+
+#### For Existing Repository (Option A)
+Add CADD section to existing README:
+
+```markdown
+## Development with CADD
+
+This project now uses CADD (Context-Assisted Development Driven) methodology for AI-assisted development.
+
+### Getting Started with CADD
+1. Start any conversation with an AI agent: "Read the file .CADD/START.md"
+2. The agent will analyze the project and help you continue development
+3. All new development is organized using TKDD (Ticket-Driven Development)
+
+### Ticket Organization
+```
+tickets/           # CADD tickets for development
+├── backlog/       # Future work
+├── in-progress/   # Current tasks
+├── completed/     # Finished work
+└── archived/      # Old tickets
+```
+
+### Technology Stack (Auto-Detected)
+[Add detected technology information if not already present in README]
 ```
 
 ---
@@ -215,11 +295,30 @@ Structure the README based on PROJECT_PLAN.md:
 - **EVALUATE** if context or intention is lost in English translation, keep original language if needed
 
 ### Git Repository Management
+- **ALWAYS DETECT** existing Git repositories before any Git operations
 - **ALWAYS ASK** before initializing Git repository
+- **ALWAYS ASK** before making any Git commits (security critical)
+- **NEVER** commit automatically without explicit user permission
+- **CHECK** user preferences for Git automation settings
+- **OFFER OPTIONS** for existing repositories: keep, create new, or skip
+- **WARN CLEARLY** before disconnecting from existing remotes
+- **PRESERVE** existing Git history unless explicitly requested otherwise
 - **GENERATE** .gitignore based on PROJECT_PLAN.md technology stack
 - **CREATE** comprehensive README.md from PROJECT_PLAN.md information
-- **USE** meaningful commit messages
+- **USE** meaningful commit messages when user authorizes commits
 - **SUGGEST** remote repository setup after local initialization
+- **RESPECT** user's Git workflow preferences at all times
+
+### Existing Repository Security
+- **DETECT** .git/ folder presence before any Git operations
+- **ANALYZE** existing remotes and show them to user before any changes
+- **DEFAULT** to keeping existing repository for existing projects
+- **WARN EXPLICITLY** before removing Git history or disconnecting remotes
+- **SHOW REMOTE URL** when asking about repository disconnection
+- **PRESERVE** existing .gitignore and README when possible
+- **MERGE** CADD additions with existing project structure
+- **NEVER** force Git reinitialization without clear user confirmation
+- **RESPECT** existing branch structure and workflow
 
 ### README Maintenance
 - **ALWAYS ASK** before updating README after phase completion
