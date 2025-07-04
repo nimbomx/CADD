@@ -57,6 +57,7 @@ E) ⚙️ Update preferences (PREFERENCES.md)
 8. Generate first TKDD ticket in `/tickets` folder
 9. **ASK**: "Do you want to prepare this project for a Git repository?"
 10. **IF YES**: Execute Git Repository Setup (see section below)
+11. **IMPORTANT**: Always ask before making any Git commits (check Git Security Rules)
 
 #### B) Continue Current Phase
 1. Read PROJECT_PLAN.md
@@ -187,7 +188,9 @@ Would you like me to include Turborepo in your technology stack?
 3. **Initialize Git Repository**:
    - Run `git init` if not already initialized
    - Add initial .gitignore and README.md
-   - Create initial commit with meaningful message
+   - **ASK USER**: "Do you want me to make the initial commit?" (show files to be committed)
+   - **IF YES**: Create initial commit with meaningful message
+   - **IF NO**: Leave files staged for user to commit manually
    - Suggest next steps for remote repository setup
 
 ### .gitignore Template Generation
@@ -278,8 +281,9 @@ tickets/           # TKDD tickets for development
    - Update if usage instructions changed
 
 5. **Commit Changes**:
-   - Add and commit README updates
-   - Use meaningful commit message
+   - **ASK USER**: "Do you want me to commit the README updates?" (show changes)
+   - **IF YES**: Add and commit README updates with meaningful message
+   - **IF NO**: Leave changes uncommitted for user to handle
 
 ---
 
@@ -293,6 +297,7 @@ tickets/           # TKDD tickets for development
 - **ASK** if something is unclear in PROJECT_PLAN.md
 - **UPDATE** PROJECT_PLAN.md when there are important changes
 - **RESPECT** preferences in PREFERENCES.md at all times
+- **CRITICAL**: Always ask before making Git commits (security first)
 
 ### Critical User Interaction
 - **ANALYZE** all user suggestions objectively, especially if they are beginners
@@ -311,10 +316,28 @@ tickets/           # TKDD tickets for development
 
 ### Git Repository Management
 - **ALWAYS ASK** before initializing Git repository
+- **ALWAYS ASK** before making any Git commits (security critical)
+- **NEVER** commit automatically without explicit user permission
+- **CHECK** user preferences for Git automation settings
 - **GENERATE** .gitignore based on PROJECT_PLAN.md technology stack
 - **CREATE** comprehensive README.md from PROJECT_PLAN.md information
-- **USE** meaningful commit messages
+- **USE** meaningful commit messages when user authorizes commits
 - **SUGGEST** remote repository setup after local initialization
+- **RESPECT** user's Git workflow preferences at all times
+
+### Git Commit Policy
+- **DEFAULT BEHAVIOR**: Always ask before making commits
+- **SECURITY**: Users may have sensitive files or notes
+- **CONFIGURABLE**: User can authorize automatic commits in PREFERENCES.md
+- **EXPLICIT PERMISSION**: Only commit automatically if user explicitly enables it
+- **ALWAYS CONFIRM**: Show what will be committed before proceeding
+
+### Git Security Rules
+- **NEVER** assume files are safe to commit
+- **ALWAYS** show git status before committing
+- **ASK** user to review files before adding to Git
+- **RESPECT** if user wants to handle Git manually
+- **PROTECT** user from accidental exposure of sensitive information
 
 ### README Maintenance
 - **ALWAYS ASK** before updating README after phase completion
@@ -328,12 +351,14 @@ tickets/           # TKDD tickets for development
 - **NO VERBOSITY** - Keep responses short and actionable
 - **CONTEXT ON REQUEST** - Only explain how things work if user asks
 - **MENTION USER_GUIDE** - Reference available in .CADD/USER_GUIDE.md for methodology questions
+- **SECURITY FIRST** - Always ask before Git operations to protect sensitive information
 
 ### Detecting User Preferences
 - **"[Not configured]"** in PREFERENCES.md means no preference set
 - **Don't assume** examples are real preferences
 - **Only configured values** should be applied
 - **Offer setup** if preferences are mostly unconfigured
+- **Git Security**: Default to "always-ask" for commits unless explicitly configured otherwise
 
 ### Preferences Management
 - **FIRST TIME**: Offer to set up preferences if mostly unconfigured

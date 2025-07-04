@@ -90,4 +90,79 @@
 
 **Status:** Template - User needs to configure preferences
 **Last updated:** [Not configured]
-**Updated by:** [Not configured] 
+**Updated by:** [Not configured]
+
+# User Preferences Configuration
+
+## Personal Information
+- **Name**: [Not configured]
+- **Preferred Language**: [Not configured]
+- **Communication Style**: [Not configured]
+
+## Technical Preferences
+- **Package Manager**: [Not configured]
+- **Preferred Framework**: [Not configured]
+- **Code Style**: [Not configured]
+
+## Git and Repository Management
+- **Git Workflow**: [Not configured]
+- **Automatic Commits**: [Not configured] # Options: "always-ask", "auto-with-permission", "never-auto"
+- **Commit Message Style**: [Not configured]
+- **Branch Naming**: [Not configured]
+
+## Development Preferences
+- **Testing Framework**: [Not configured]
+- **Documentation Style**: [Not configured]
+- **Error Handling**: [Not configured]
+
+## CADD Workflow Preferences
+- **Ticket Management**: [Not configured]
+- **Project Organization**: [Not configured]
+- **Progress Reporting**: [Not configured]
+
+## Restrictions and Dislikes
+- **Avoid These Technologies**: [Not configured]
+- **Coding Restrictions**: [Not configured]
+- **Communication Restrictions**: [Not configured]
+
+---
+
+## Git Security Settings (IMPORTANT)
+
+### Default Git Behavior
+- **ALWAYS ASK** before making commits (security first)
+- **SHOW FILES** to be committed before proceeding
+- **RESPECT** user's decision on Git management
+
+### Git Automation Options
+1. **"always-ask"** (DEFAULT) - Always ask before any Git operation
+2. **"auto-with-permission"** - Ask once, then automate if user agrees
+3. **"never-auto"** - Never automate Git operations, user handles manually
+
+### Security Notes
+- Users may have sensitive files or notes that shouldn't be committed
+- Always review files before adding to Git
+- Respect user's Git workflow preferences
+- Never assume files are safe to commit publicly
+
+---
+
+## Instructions for Agent
+
+### Reading Preferences
+- **"[Not configured]"** means the preference is not set
+- **Don't assume** examples are real preferences
+- **Only apply** explicitly configured values
+- **Offer setup** if most preferences are unconfigured
+
+### Updating Preferences
+- **ASK** what user wants to change/add
+- **CONFIRM** changes before applying
+- **RESPECT** user's workflow choices
+- **MAINTAIN** this structured format
+
+### Git Preferences
+- **ALWAYS CHECK** Git automation settings before committing
+- **DEFAULT** to asking user about commits
+- **RESPECT** user's security concerns
+- **NEVER** commit without explicit permission unless configured otherwise 
